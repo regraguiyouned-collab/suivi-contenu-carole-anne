@@ -9,7 +9,7 @@
 <style>
 :root{
   --encre:#242424; --gris:#7A7075; --gris-c:#A39A9E; --trait:#ECE6E0; --fond-col:#F7F4F1;
-  --rouge:#FF385C; --rouge-f:#D81E44; --rose:#FFE5E8; --bleu:#DDF1F2; --bleu-f:#16767B; --creme:#FBF6EF;
+  --rouge:#FF385C; --rouge-f:#D81E44; --rose:#FFE5E8; --violet:#6D4FD3; --violet-pale:#EEE9FB; --creme:#FBF6EF;
   --f-titre:"Chewy","Nunito",system-ui,sans-serif;
   --f-corps:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
@@ -35,11 +35,17 @@ hr{border:0;border-top:1px solid var(--trait);margin:16px 0}
 .st b{font-size:17px;color:var(--encre);font-weight:900}
 .st.alerte{background:var(--rose);color:var(--rouge-f)}
 .st.alerte b{color:var(--rouge-f)}
+.st.moi{background:var(--violet-pale);color:var(--violet)}
+.st.moi b{color:var(--violet)}
+.legende{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--gris)}
+.legende span{display:flex;align-items:center;gap:6px}
+.legende i{width:10px;height:10px;border-radius:3px;display:inline-block}
 
 /* Onglets de vue */
 .vues{display:flex;gap:0;margin:22px 0 0;border-bottom:1px solid var(--trait);overflow-x:auto;scrollbar-width:none}
 .vues a{white-space:nowrap;flex:none;text-decoration:none;padding:8px 10px;font-weight:800;font-size:14.5px;color:var(--gris);border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;gap:6px;align-items:center}
 .vues a.on{color:var(--encre);border-color:var(--encre)}
+.vues .b.moi{background:var(--violet)}
 .vues .b{background:var(--rouge);color:#fff;border-radius:999px;font-size:11px;padding:0 6px;line-height:16px}
 section{display:none}
 section.on{display:block}
@@ -52,7 +58,8 @@ h2 small{font-weight:700;color:var(--gris-c);font-size:13px}
 .col-h{display:flex;align-items:center;gap:6px;margin:0 2px 8px;font-size:12.5px}
 .pill{display:inline-block;border-radius:5px;padding:1px 7px;font-weight:800;font-size:12px;white-space:nowrap}
 .col-h .n{color:var(--gris-c);font-weight:800}
-.col-h .chez{margin-left:auto;font-size:11px;font-weight:900;color:var(--gris)}
+.col-h .chez{margin-left:auto;font-size:11px;font-weight:900}
+.rouge .chez{color:var(--rouge-f)}.violet .chez{color:var(--violet)}
 .carte{display:block;text-decoration:none;background:#fff;border-radius:8px;box-shadow:0 0 0 1px rgba(36,36,36,.07),0 1px 2px rgba(36,36,36,.06);padding:9px 10px;margin:0 0 7px}
 .carte:last-child{margin-bottom:0}
 a.carte:hover{background:#FDFBF9}
@@ -60,19 +67,14 @@ a.carte:hover{background:#FDFBF9}
 .carte .tags{display:flex;flex-wrap:wrap;gap:4px}
 .carte .tag{font-size:11px;font-weight:800;border-radius:4px;padding:0 6px;background:#EFEAE5;color:#5C5357}
 .carte .t::after{content:''}
-a.carte .t::after{content:' ↗';color:var(--rouge)}
+a.carte .t::after{content:' ↗';color:var(--gris)}
 .carte .m{font-size:11.5px;color:var(--gris);margin-top:6px}
 .vide{font-size:12.5px;color:var(--gris-c);padding:4px}
 
-/* Couleurs des statuts (façon étiquettes) */
-.c0{background:#EEF3F8}.c0 .pill{background:#D6E4F2;color:#2D5B87}
-.c1{background:#FDEEEF}.c1 .pill{background:var(--rose);color:var(--rouge-f)}
-.c2{background:#F4F1FA}.c2 .pill{background:#E4DCF3;color:#5E479A}
-.c3{background:#FDEEEF}.c3 .pill{background:var(--rose);color:var(--rouge-f)}
-.c4{background:#FBF4E6}.c4 .pill{background:#F5E3BD;color:#8A5A0B}
-.c5{background:#F2F5EE}.c5 .pill{background:#DCE8D0;color:#46682A}
-.c6{background:#EAF6F1}.c6 .pill{background:#CBEBDD;color:#1E6B4C}
-.c7{background:#F3F2F1}.c7 .pill{background:#E4E1DE;color:#5C5357}
+/* Code couleur : rouge = chez Lara / Carole-Anne, violet = chez Younes, gris = rien à faire */
+.rouge{background:#FDEEEF}.rouge .pill{background:var(--rose);color:var(--rouge-f)}
+.violet{background:#F5F2FD}.violet .pill{background:var(--violet-pale);color:var(--violet)}
+.neutre{background:var(--fond-col)}.neutre .pill{background:#E4E1DE;color:#5C5357}
 
 /* Calendrier */
 .cal-h{display:flex;align-items:center;gap:8px;margin:28px 0 10px}
@@ -85,10 +87,9 @@ a.carte .t::after{content:' ↗';color:var(--rouge)}
 .case.hors .num{color:var(--gris-c)}
 .case.we{background:#FCFAF8}
 .num{text-align:right;font-size:12px;font-weight:800;color:var(--gris);margin-bottom:3px}
-.case.auj .num span{background:var(--rouge);color:#fff;border-radius:999px;padding:1px 6px}
+.case.auj .num span{background:var(--encre);color:#fff;border-radius:999px;padding:1px 6px}
 .ev{display:block;text-decoration:none;font-size:11.5px;font-weight:800;line-height:1.25;border-radius:4px;padding:3px 5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ev.reel{background:var(--bleu);color:#0F5559}
-.ev.carr{background:var(--rose);color:#A3102F}
+.ev.reel,.ev.carr{background:#EFEAE5;color:var(--encre)}
 .ev.pub{opacity:.55}
 .case{cursor:pointer}
 .case:hover{background:#FDFBF9}
@@ -110,7 +111,7 @@ a.carte .t::after{content:' ↗';color:var(--rouge)}
 
 /* Tâches */
 .taches{max-width:640px}
-.tache .go{color:var(--rouge);font-weight:900;text-decoration:none;display:inline-block}
+.tache .go{color:var(--gris);font-weight:900;text-decoration:none;display:inline-block}
 a.tache{color:inherit;text-decoration:none}
 a.tache:hover .t{text-decoration:underline}
 .tache{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--trait)}
@@ -120,8 +121,9 @@ a.tache:hover .t{text-decoration:underline}
 .tache .t{flex:1;font-weight:700}
 .tache.fait .t{color:var(--gris-c);text-decoration:line-through}
 .tache .dl{font-size:12.5px;color:var(--gris);font-weight:800}
-.tache.retard .t,.tache.retard .dl{color:var(--rouge-f)}
-.tache.retard .ck{border-color:var(--rouge)}
+.tache .ck{border-color:var(--violet)}
+.tache.retard .t,.tache.retard .dl{color:var(--violet);font-weight:900}
+.tache.retard .ck{border-color:var(--violet);background:var(--violet-pale)}
 .pied{margin-top:40px;font-size:12.5px;color:var(--gris-c)}
 </style>
 </head>
@@ -133,6 +135,7 @@ a.tache:hover .t{text-decoration:underline}
   <div class="maj" id="maj"></div>
   <hr>
   <div class="stats" id="stats"></div>
+  <div class="legende"><span><i style="background:var(--rouge)"></i>Rouge : à faire de votre côté</span><span><i style="background:var(--violet)"></i>Violet : de mon côté</span></div>
   <nav class="vues" id="vues"></nav>
   <div id="app"></div>
   <p class="pied">Pour valider ou refuser : réponse sur WhatsApp.</p>
@@ -169,10 +172,10 @@ a.tache:hover .t{text-decoration:underline}
   const nProg=nb(carr,'Programmé'), nPret=nb(reels,'Prêt'), nCV=nb(carr,'À valider');
   const ri=nb(reels,'Idée à valider'), rs=nb(reels,'Script à valider'), rt=nb(reels,'À tourner'), nAtt=ri+rs+rt;
   document.getElementById('stats').innerHTML=`
-    <div class="st ${nProg<MIN_C?'alerte':''}"><b>${nProg}</b> carrousels programmés${nProg<MIN_C?' · nouveau lot en cours':''}</div>
+    <div class="st ${nProg<MIN_C?'moi':''}"><b>${nProg}</b> carrousels programmés${nProg<MIN_C?' · nouveau lot en cours':''}</div>
     <div class="st"><b>${nPret}</b> réel${nPret>1?'s':''} prêt${nPret>1?'s':''}</div>
-    <div class="st ${nAtt<MIN_R?'alerte':''}"><b>${nAtt}</b> réels chez vous <span>(${ri} idées, ${rs} scripts, ${rt} à tourner)</span></div>
-    <div class="st"><b>${nCV}</b> carrousel${nCV>1?'s':''} à valider</div>`;
+    <div class="st ${nAtt?'alerte':''}"><b>${nAtt}</b> réels chez vous <span>(${ri} idées, ${rs} scripts, ${rt} à tourner)</span></div>${nAtt<MIN_R?`<div class="st moi">moins de ${MIN_R} : je prépare d'autres idées de réels</div>`:''}
+    <div class="st ${nCV?'alerte':''}"><b>${nCV}</b> carrousel${nCV>1?'s':''} à valider</div>`;
 
   /* Tableau par statut */
   const tableau=(fmtNom,liste)=>{
@@ -180,8 +183,8 @@ a.tache:hover .t{text-decoration:underline}
     return `<div class="board">`+sts.map((st,i)=>{
       const items=liste.filter(x=>x.statut===st).sort((a,b)=>(a.date||'9').localeCompare(b.date||'9'));
       if(st==='Publié') items.reverse();
-      const c='c'+(st==='Publié'?7:Math.min(i,6));
-      const q=QUI[st];
+      const q=QUI[st]||(['Programmé','Prêt','Publié'].includes(st)?'':'Younes');
+      const c=q==='Younes'?'violet':(q?'rouge':'neutre');
       return `<div class="col ${c}"><div class="col-h"><span class="pill">${esc(st)}</span><span class="n">${items.length}</span>${q?`<span class="chez">chez ${esc(q)}</span>`:''}</div>`+
         (items.length?items.map(x=>{
           const inner=`<div class="t">${esc(x.titre)}</div><div class="tags"><span class="tag">${esc(x.format)}</span>${x.date?`<span class="tag">${court(x.date)}</span>`:''}</div>${x.note?`<div class="m">${esc(x.note)}</div>`:''}`;
@@ -225,9 +228,9 @@ a.tache:hover .t{text-decoration:underline}
   const VUES=[
     {id:'reels',nom:'Réels',badge:attReels,html:()=>`<h2>Réels <small>${reels.length}</small></h2>${tableau('Réel',reels)}${calendrier('reels',reels)}`},
     {id:'carrousels',nom:'Carrousels',badge:attCarr,html:()=>`<h2>Carrousels <small>${carr.length}</small></h2>${tableau('Carrousel',carr)}${calendrier('carrousels',carr)}`},
-    {id:'taches',nom:'Mes tâches',badge:nRet,html:taches},
+    {id:'taches',nom:'Mes tâches',badge:nRet,moi:true,html:taches},
   ];
-  document.getElementById('vues').innerHTML=VUES.map(v=>`<a href="#${v.id}" data-v="${v.id}">${v.nom}${v.badge?`<span class="b">${v.badge}</span>`:''}</a>`).join('');
+  document.getElementById('vues').innerHTML=VUES.map(v=>`<a href="#${v.id}" data-v="${v.id}">${v.nom}${v.badge?`<span class="b ${v.moi?'moi':''}">${v.badge}</span>`:''}</a>`).join('');
   const rendre=()=>{
     const id=(location.hash||'').slice(1); const v=VUES.find(x=>x.id===id)||VUES[0];
     document.querySelectorAll('.vues a').forEach(a=>a.classList.toggle('on',a.dataset.v===v.id));
