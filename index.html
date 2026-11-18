@@ -150,7 +150,7 @@ a.carte:hover{background:#FDFBF9}
     document.getElementById('maj').innerHTML='Dernière mise à jour : '+fmt(d,{day:'numeric',month:'long'})+(hh?' à '+parseInt(hh,10)+' h '+mm:'')+(data.donnees_exemple?'<span class="ex">EXEMPLE</span>':'');
   }
 
-  const C=(data.contenus||[]).filter(x=>!x.retire), T=(data.taches||[]).filter(t=>!t.retire), QUI=data.qui_doit_agir||{}, R=data.regles||{};
+  const C=(data.contenus||[]).filter(x=>!x.retire), T=(data.taches||[]).filter(t=>!t.retire && !(t.fait && (t.fait_le||t.deadline) && (t.fait_le||t.deadline) < plus(AUJ,-7))), QUI=data.qui_doit_agir||{}, R=data.regles||{};
   const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??15;
   const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
   const nb=(l,s)=>l.filter(x=>x.statut===s).length;
