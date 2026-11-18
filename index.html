@@ -8,317 +8,241 @@
 <link rel="stylesheet" href="polices.css">
 <style>
 :root{
-  --encre:#242424; --gris:#3D3439; --gris-2:#6B6066; --rouge:#FF385C; --rouge-fonce:#E0234A;
-  --rose-pale:#FFE5E8; --bleu-pale:#DDF1F2; --bleu:#1F8A8F; --creme:#FBF6EF; --creme-2:#F4ECE1; --bord:#EDE3D8;
-  --vert:#2E8B57; --vert-pale:#E3F4EA;
+  --encre:#242424; --gris:#7A7075; --trait:#EFE7DD; --rouge:#FF385C; --rouge-f:#D81E44;
+  --rose:#FFE5E8; --bleu:#DDF1F2; --bleu-f:#16767B; --creme:#FBF6EF; --vert:#2E8B57;
   --f-titre:"Chewy","Nunito",system-ui,sans-serif;
   --f-corps:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-main:"Kalam","Nunito",cursive;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;min-height:100%;background-color:var(--creme);
-  background-image:radial-gradient(circle at 15% 0%,rgba(255,229,232,.7) 0,transparent 38%),radial-gradient(circle at 100% 40%,rgba(221,241,242,.6) 0,transparent 40%),radial-gradient(circle at 0% 100%,rgba(255,229,232,.45) 0,transparent 35%);
-  background-repeat:no-repeat;background-size:100% 100%}
-body{margin:0;color:var(--encre);font-family:var(--f-corps);font-size:16px;line-height:1.45}
-a{color:var(--rouge)}
-.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px;overflow-wrap:break-word}
-@media (min-width:900px){.wrap{padding:36px 28px 80px}}
+html{background:var(--creme);-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--encre);font-family:var(--f-corps);font-size:16px;line-height:1.4}
+a{color:inherit}
+.wrap{max-width:640px;margin:0 auto;padding:22px 18px 60px}
 
 /* En-tête */
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;margin:0 0 10px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--avatar) center 20%/cover #eee;flex:none;border:2px solid #fff;box-shadow:0 0 0 2px var(--rouge)}
-h1{font-family:var(--f-titre);font-weight:400;font-size:36px;line-height:1.05;margin:6px 0 6px}
-@media (min-width:900px){h1{font-size:50px}}
-.maj{color:var(--gris-2);font-weight:700;font-size:14px;margin:0 0 14px}
-.exemple{display:flex;gap:10px;align-items:flex-start;background:var(--encre);color:#fff;border-radius:16px;padding:12px 16px;margin:0 0 22px;font-weight:700;font-size:14.5px}
-.exemple b{color:#FFB3C0}
-h2{font-family:var(--f-titre);font-weight:400;font-size:27px;line-height:1.1;margin:34px 0 4px}
-@media (min-width:900px){h2{font-size:32px}}
-.sous{color:var(--gris-2);font-size:14.5px;margin:0 0 14px}
-.manu{font-family:var(--f-main);color:var(--rouge);font-size:18px;line-height:1.2}
+.haut{display:flex;align-items:center;gap:12px}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--avatar) center 20%/cover #eee;flex:none}
+h1{font-family:var(--f-titre);font-weight:400;font-size:30px;line-height:1;margin:0}
+.maj{color:var(--gris);font-size:13px;font-weight:700;margin-top:3px}
+.ex{display:inline-block;margin-left:6px;background:var(--encre);color:#fff;border-radius:6px;padding:0 6px;font-size:11.5px;font-weight:800;vertical-align:1px}
 
-/* Compteurs */
-.compteurs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media (min-width:900px){.compteurs{grid-template-columns:repeat(4,1fr);gap:14px}}
-.cpt{background:#fff;border:1.5px solid var(--bord);border-radius:18px;padding:14px 14px 12px;display:flex;flex-direction:column}
-.cpt .lbl{font-weight:800;font-size:13.5px;line-height:1.25;color:var(--gris);min-height:34px}
-.cpt .nb{font-family:var(--f-titre);font-size:52px;line-height:1;margin:6px 0 4px;color:var(--encre)}
-@media (min-width:900px){.cpt .nb{font-size:64px}}
-.cpt .det{font-size:13px;font-weight:700;color:var(--gris-2);line-height:1.3}
-.cpt.alerte{border:2px solid var(--rouge);background:#FFF7F8}
-.cpt.alerte .nb{color:var(--rouge)}
-.cpt.alerte .det{color:var(--rouge-fonce)}
-.cpt.ok .det{color:var(--vert)}
+/* Onglets */
+nav{position:sticky;top:0;z-index:5;background:var(--creme);margin:18px -18px 0;padding:8px 14px;display:flex;gap:0;justify-content:space-between;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--trait)}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;font-weight:800;font-size:14px;color:var(--gris);padding:7px 9px;border-radius:999px;display:flex;align-items:center;gap:6px}
+nav a.on{background:var(--encre);color:#fff}
+nav a .b{width:7px;height:7px;border-radius:50%;background:var(--rouge)}
 
-/* Ce qui vous attend */
-.attend{display:grid;gap:12px}
-@media (min-width:900px){.attend{grid-template-columns:1fr 1fr;align-items:start}}
-.qui{background:#fff;border:2px solid #FFB3C0;border-radius:20px;padding:14px 14px 6px}
-.qui.ca{border-color:#A9DCDF}
-.qui-tete{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 6px}
-.qui-tete h3{font-family:var(--f-titre);font-weight:400;font-size:24px;margin:0}
-.pastille{flex:none;background:var(--rouge);color:#fff;font-weight:900;border-radius:999px;padding:3px 11px;font-size:15px}
-.qui.ca .pastille{background:var(--bleu)}
-.groupe{margin:8px 0 10px}
-.groupe-tit{font-weight:900;font-size:14.5px;margin:0 0 4px;color:var(--gris)}
-.item{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 0;border-top:1px solid var(--creme-2)}
-.item:first-of-type{border-top:0}
-.item .t{font-weight:800;font-size:15px;line-height:1.3}
-.item .m{font-size:13px;color:var(--gris-2);margin-top:1px}
-.btn-lien{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:6px 13px;border-radius:999px;background:var(--rose-pale);color:var(--rouge-fonce);font-weight:900;font-size:13.5px;text-decoration:none;white-space:nowrap}
-.qui.ca .btn-lien{background:var(--bleu-pale);color:#13696D}
-.sans-lien{flex:none;font-size:12.5px;color:var(--gris-2);font-weight:700}
-.vide{color:var(--gris-2);font-weight:700;padding:6px 0 12px}
+section{display:none;padding-top:18px}
+section.on{display:block}
+h2{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;color:var(--gris);margin:22px 0 8px}
+h2:first-child{margin-top:4px}
+
+/* Chiffres */
+.chiffres{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ch{background:#fff;border-radius:14px;padding:12px 14px}
+.ch .n{font-family:var(--f-titre);font-size:38px;line-height:1}
+.ch .l{font-size:13.5px;font-weight:800;margin-top:4px;line-height:1.25}
+.ch .s{font-size:12.5px;color:var(--gris);margin-top:2px;line-height:1.3}
+.ch.alerte .n,.ch.alerte .s{color:var(--rouge-f)}
+
+/* Listes */
+.liste{background:#fff;border-radius:14px;padding:2px 14px}
+.li{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--trait);text-decoration:none}
+.li:first-child{border-top:0}
+.li .tx{flex:1;min-width:0}
+.li .t{font-weight:800;font-size:15px;line-height:1.3}
+.li .m{font-size:12.5px;color:var(--gris);margin-top:1px}
+.li .go{flex:none;color:var(--rouge);font-weight:900;font-size:18px}
+.pt{flex:none;width:9px;height:9px;border-radius:50%;background:var(--rouge)}
+.pt.reel{background:var(--bleu-f)}
+.grp{font-size:14px;font-weight:900;margin:16px 0 6px;display:flex;justify-content:space-between}
+.grp span{color:var(--gris);font-weight:800}
+.qui{font-family:var(--f-titre);font-weight:400;font-size:22px;margin:22px 0 2px}
+.qui:first-of-type{margin-top:6px}
+.rien{color:var(--gris);font-size:14px;padding:12px 0}
 
 /* Semaine */
-.semaine{display:grid;gap:8px}
-@media (min-width:900px){.semaine{grid-template-columns:repeat(7,1fr)}}
-.jour{background:#fff;border:1.5px solid var(--bord);border-radius:16px;padding:10px 12px;display:grid;grid-template-columns:80px 1fr;gap:10px;align-items:start}
-@media (min-width:900px){.jour{display:block;min-height:150px}}
-.jour.auj{border:2px solid var(--rouge);box-shadow:0 3px 0 var(--rose-pale)}
-.jour.passe{opacity:.78}
-.jour .j{font-weight:900;font-size:14px;line-height:1.15;text-transform:capitalize}
-.jour .j small{display:block;font-weight:700;color:var(--gris-2);font-size:12.5px;text-transform:none}
-.jour .j .tag-auj{display:inline-block;margin-top:3px;background:var(--rouge);color:#fff;border-radius:6px;padding:0 6px;font-size:11px;font-weight:900;text-transform:none}
-@media (min-width:900px){.jour .j{margin-bottom:8px}}
-.pj{border-radius:12px;padding:7px 9px;margin:0 0 6px;font-size:13.5px;font-weight:800;line-height:1.25}
-.pj:last-child{margin-bottom:0}
-.pj .f{display:block;font-size:11.5px;font-weight:900;letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
-.pj.carr{background:var(--rose-pale)}.pj.carr .f{color:var(--rouge-fonce)}
-.pj.reel{background:var(--bleu-pale)}.pj.reel .f{color:#13696D}
-.pj.decale{background:#fff;border:1.5px dashed #D8C9B8;color:var(--gris-2)}
-.pj.rien{background:#fff;border:1.5px dashed var(--rouge);color:var(--rouge-fonce)}
-.ok-pub{color:var(--vert)}
+.jour{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--trait)}
+.jour:first-child{border-top:0}
+.jour .d{flex:none;width:56px;font-weight:900;font-size:14px;line-height:1.15;text-transform:capitalize}
+.jour .d small{display:block;font-weight:700;color:var(--gris);font-size:12px;text-transform:none}
+.jour.auj .d{color:var(--rouge-f)}
+.jour .t{font-weight:800;font-size:14.5px;line-height:1.3}
+.jour .m{font-size:12.5px;color:var(--gris)}
+.jour.passe{opacity:.55}
+.jour .vide{color:var(--rouge-f);font-weight:800;font-size:14px}
+.legende{display:flex;gap:14px;font-size:12.5px;color:var(--gris);font-weight:700;margin:8px 2px 0}
+.legende span{display:flex;align-items:center;gap:5px}
 
-/* Pipelines */
-.pipe{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -16px;padding-left:16px;padding-right:16px}
-@media (min-width:900px){.pipe{margin:0;padding-left:2px;padding-right:2px}}
-.col{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:rgba(255,255,255,.55);border:1.5px solid var(--bord);border-radius:18px;padding:10px}
-@media (min-width:900px){.col{flex:1 0 210px;max-width:none}}
-.col-tete{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:900;font-size:14px;margin:2px 4px 10px}
-.col-tete .n{background:var(--creme-2);border-radius:999px;padding:1px 9px;font-size:13px}
-.col-tete .qui-col{display:block;font-size:11.5px;font-weight:800;color:var(--rouge-fonce)}
-.col-tete .qui-col.ca{color:#13696D}
-.carte{background:#fff;border:1.5px solid var(--bord);border-radius:14px;padding:10px 11px;margin:0 0 8px}
-.carte:last-child{margin-bottom:0}
-.carte .t{font-weight:900;font-size:14.5px;line-height:1.28;margin:0 0 6px}
-.chips{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}
-.chip{font-size:11.5px;font-weight:900;border-radius:7px;padding:2px 7px;background:var(--creme-2);color:var(--gris)}
-.chip.carr{background:var(--rose-pale);color:var(--rouge-fonce)}
-.chip.reel{background:var(--bleu-pale);color:#13696D}
-.chip.id{background:#fff;border:1px solid var(--bord);color:var(--gris-2)}
-.carte .d{font-size:12.5px;font-weight:800;color:var(--gris)}
-.carte .no{font-size:12.5px;color:var(--gris-2);margin-top:3px;font-style:italic}
-.carte .lk{display:inline-block;margin-top:6px;font-size:13px;font-weight:900;text-decoration:none}
-.col-vide{font-size:13px;color:var(--gris-2);font-weight:700;padding:6px 4px}
-.glisser{font-size:13px;color:var(--gris-2);font-weight:700;margin:-6px 0 8px}
-@media (min-width:900px){.glisser{display:none}}
+/* Étapes (carrousels / réels) */
+details{background:#fff;border-radius:14px;margin:0 0 6px}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;font-weight:800;font-size:15px}
+summary::-webkit-details-marker{display:none}
+summary .n{color:var(--gris);font-weight:800;font-size:14px;display:flex;align-items:center;gap:8px}
+summary .n::after{content:"›";font-size:20px;line-height:1;transition:transform .15s}
+details[open] summary .n::after{transform:rotate(90deg)}
+summary .chez{font-size:11.5px;font-weight:900;color:var(--rouge-f);background:var(--rose);border-radius:6px;padding:1px 6px;margin-left:6px}
+summary .chez.ca{color:var(--bleu-f);background:var(--bleu)}
+details .liste{padding-top:0}
+details .li:first-child{border-top:1px solid var(--trait)}
 
 /* Tâches */
-.taches{background:#fff;border:1.5px solid var(--bord);border-radius:18px;padding:4px 14px}
-.tache{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--creme-2)}
+.tache{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--trait)}
 .tache:first-child{border-top:0}
-.case{flex:none;width:26px;height:26px;border-radius:8px;border:2px solid var(--encre);display:flex;align-items:center;justify-content:center}
-.tache.fait .case{background:var(--vert);border-color:var(--vert)}
-.tache.fait .case::after{content:"";width:6px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.tache .tt{flex:1;font-weight:800;font-size:15px;line-height:1.3}
-.tache.fait .tt{color:var(--gris-2);text-decoration:line-through;text-decoration-thickness:1.5px}
-.tache .dl{flex:none;font-size:13px;font-weight:800;color:var(--gris-2);text-align:right}
-.tache.retard{background:#FFF7F8;margin:0 -14px;padding-left:14px;padding-right:14px}
+.case{flex:none;width:20px;height:20px;border-radius:6px;border:2px solid #CFC4B8}
+.tache.fait .case{background:var(--vert);border-color:var(--vert);position:relative}
+.tache.fait .case::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.tache .t{flex:1;font-weight:800;font-size:15px;line-height:1.3}
+.tache.fait .t{color:var(--gris);font-weight:700;text-decoration:line-through}
+.tache .dl{flex:none;font-size:12.5px;color:var(--gris);font-weight:800}
+.tache.retard .t,.tache.retard .dl{color:var(--rouge-f)}
 .tache.retard .case{border-color:var(--rouge)}
-.tache.retard .tt,.tache.retard .dl{color:var(--rouge-fonce)}
 
-/* Bilan */
-.bilan{display:grid;gap:12px}
-@media (min-width:900px){.bilan{grid-template-columns:1fr 1fr}}
-.bloc{border-radius:18px;padding:14px 16px}
-.bloc.fait{background:var(--vert-pale)}
-.bloc.prevu{background:var(--bleu-pale)}
-.bloc h3{font-weight:900;font-size:17px;margin:0 0 6px}
-.bloc ul{margin:0;padding-left:20px}.bloc li{margin:4px 0;font-size:15px}
-.bloc .alerte-li{color:var(--rouge-fonce);font-weight:800}
-.pied{margin-top:40px;text-align:center;color:var(--gris-2);font-size:13px}
-.erreur{background:#fff;border:2px solid var(--rouge);border-radius:16px;padding:16px;font-weight:800}
+.bilan{background:#fff;border-radius:14px;padding:12px 14px;font-size:14.5px}
+.bilan p{margin:0 0 6px}.bilan p:last-child{margin:0}
+.bilan b{font-weight:900}
+.alerte-tx{color:var(--rouge-f);font-weight:800}
+.pied{margin-top:36px;text-align:center;color:var(--gris);font-size:12.5px}
 </style>
 </head>
 <body>
 <main class="wrap">
-  <header class="brand"><span class="avatar"></span><span>Carole-Anne · Suivi du contenu</span></header>
-  <h1>Où en est le contenu ?</h1>
-  <p class="maj" id="maj"></p>
-  <div id="bandeau-exemple" class="exemple" hidden><span>⚠️</span><span><b>Données d'exemple.</b> Les titres, dates et chiffres ci-dessous servent seulement à montrer le rendu. Les vraies données arrivent bientôt.</span></div>
-  <div id="app"><p class="sous">Chargement…</p></div>
-  <p class="pied">Page mise à jour par Younes · Media Scaling. Pour valider ou refuser, répondez sur WhatsApp.</p>
+  <header class="haut">
+    <span class="avatar"></span>
+    <div><h1>Suivi du contenu</h1><div class="maj" id="maj"></div></div>
+  </header>
+  <nav id="nav"></nav>
+  <div id="app"></div>
+  <p class="pied">Pour valider ou refuser : réponse sur WhatsApp.</p>
 </main>
 
 <script>
 (async function(){
   const app = document.getElementById('app');
   let data;
-  try{
-    const r = await fetch('donnees.json', {cache:'no-store'});
-    data = await r.json();
-  }catch(e){
-    app.innerHTML = '<div class="erreur">La page n\'a pas pu charger les données. Réessayez dans un instant.</div>';
-    return;
+  try{ data = await (await fetch('donnees.json',{cache:'no-store'})).json(); }
+  catch(e){ app.innerHTML='<p class="rien">Impossible de charger les données. Réessayez.</p>'; return; }
+
+  /* Dates (heure de Paris) */
+  const AUJ = new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const D = iso => new Date(iso+'T12:00:00Z');
+  const plus = (iso,n) => { const d=D(iso); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); };
+  const fmt = (iso,o) => new Intl.DateTimeFormat('fr-FR',{timeZone:'UTC',...o}).format(D(iso));
+  const court = iso => iso ? fmt(iso,{weekday:'short',day:'numeric',month:'short'}) : '';
+  const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  if(data.derniere_mise_a_jour){
+    const [d,h]=data.derniere_mise_a_jour.split('T'); const [hh,mm]=(h||'').split(':');
+    document.getElementById('maj').innerHTML = 'Mis à jour le '+fmt(d,{day:'numeric',month:'long'})+(hh?' à '+parseInt(hh,10)+' h '+mm:'')+(data.donnees_exemple?'<span class="ex">EXEMPLE</span>':'');
   }
 
-  /* ---------- Outils dates (heure de Paris) ---------- */
-  const TZ = 'Europe/Paris';
-  const isoParis = d => new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
-  const AUJ = isoParis(new Date());
-  const enDate = iso => new Date(iso + 'T12:00:00Z');
-  const plusJours = (iso,n) => { const d = enDate(iso); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); };
-  const lundiDe = iso => { const d = enDate(iso); const j = (d.getUTCDay()+6)%7; return plusJours(iso,-j); };
-  const fmt = (iso,o) => new Intl.DateTimeFormat('fr-FR',Object.assign({timeZone:'UTC'},o)).format(enDate(iso));
-  const dateCourte = iso => iso ? fmt(iso,{weekday:'short',day:'numeric',month:'short'}) : '';
-  const esc = s => String(s ?? '').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const C=data.contenus||[], T=data.taches||[], QUI=data.qui_doit_agir||{}, R=data.regles||{};
+  const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??20;
+  const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
+  const nb=(l,s)=>l.filter(x=>x.statut===s).length;
+  const pt = x => `<span class="pt ${x.format==='Réel'?'reel':''}"></span>`;
+  const ligne = (x,meta) => {
+    const m = meta ?? [x.date?court(x.date):'', x.note].filter(Boolean).join(' · ');
+    const inner = `${pt(x)}<span class="tx"><div class="t">${esc(x.titre)}</div>${m?`<div class="m">${esc(m)}</div>`:''}</span>${x.lien?'<span class="go">↗</span>':''}`;
+    return x.lien ? `<a class="li" href="${esc(x.lien)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="li">${inner}</div>`;
+  };
 
-  /* ---------- Dernière mise à jour + bandeau exemple ---------- */
-  if (data.derniere_mise_a_jour){
-    const [d,h] = data.derniere_mise_a_jour.split('T');
-    const [hh,mm] = (h||'').split(':');
-    document.getElementById('maj').textContent = 'Dernière mise à jour : ' + fmt(d,{weekday:'long',day:'numeric',month:'long',year:'numeric'}) + (hh ? '\u00a0à\u00a0' + parseInt(hh,10) + '\u00a0h\u00a0' + mm : '');
-  }
-  if (data.donnees_exemple) document.getElementById('bandeau-exemple').hidden = false;
+  /* Chiffres */
+  const nProg=nb(carr,'Programmé'), nPret=nb(reels,'Prêt'), nCV=nb(carr,'À valider');
+  const ri=nb(reels,'Idée à valider'), rs=nb(reels,'Script à valider'), rt=nb(reels,'À tourner');
+  const nAtt=ri+rs+rt, aC=nProg<MIN_C, aR=nAtt<MIN_R;
 
-  const C = data.contenus || [];
-  const T = data.taches || [];
-  const QUI = data.qui_doit_agir || {};
-  const R = data.regles || {};
-  const MIN_C = R.carrousels_programmes_minimum ?? 10;
-  const MIN_R = R.reels_en_attente_minimum ?? 20;
-  const carr = C.filter(x=>x.format==='Carrousel');
-  const reels = C.filter(x=>x.format==='Réel');
-  const nb = (liste,st) => liste.filter(x=>x.statut===st).length;
-  const pluriel = (n,un,plus) => n + ' ' + (n>1?plus:un);
-  const lienHTML = (x,cls) => x.lien ? `<a class="${cls}" href="${esc(x.lien)}" target="_blank" rel="noopener">Ouvrir ↗</a>` : '';
-
-  /* ---------- 1. Compteurs ---------- */
-  const nProg = nb(carr,'Programmé');
-  const nPret = nb(reels,'Prêt');
-  const rIdee = nb(reels,'Idée à valider'), rScript = nb(reels,'Script à valider'), rTourner = nb(reels,'À tourner');
-  const nAttente = rIdee + rScript + rTourner;
-  const nCValider = nb(carr,'À valider');
-  const alerteC = nProg < MIN_C, alerteR = nAttente < MIN_R;
-
-  let h = '';
-  h += `<section class="compteurs">
-    <div class="cpt ${alerteC?'alerte':'ok'}"><div class="lbl">Carrousels programmés</div><div class="nb">${nProg}</div>
-      <div class="det">${alerteC ? `Moins de ${MIN_C} : nouveau lot en cours` : 'Assez d\'avance'}</div></div>
-    <div class="cpt"><div class="lbl">Réels prêts à poster</div><div class="nb">${nPret}</div>
-      <div class="det">${nPret ? 'Passent avant les carrousels' : 'Aucun pour l\'instant'}</div></div>
-    <div class="cpt ${alerteR?'alerte':'ok'}"><div class="lbl">Réels en attente chez vous</div><div class="nb">${nAttente}</div>
-      <div class="det">${pluriel(rIdee,'idée','idées')} à valider, ${pluriel(rScript,'script','scripts')} à valider, ${rTourner} à tourner${alerteR ? ` · moins de ${MIN_R} : je prépare d'autres idées` : ''}</div></div>
-    <div class="cpt"><div class="lbl">Carrousels à valider par Lara</div><div class="nb">${nCValider}</div>
-      <div class="det">${nCValider ? 'Envoyés sur WhatsApp' : 'Rien à valider'}</div></div>
-  </section>`;
-
-  /* ---------- 2. Ce qui vous attend ---------- */
-  const GROUPES = [
-    {qui:'Lara', fmt:'Carrousel', st:'À valider', tit:'Carrousels à valider'},
-    {qui:'Lara', fmt:'Carrousel', st:'Idée à valider', tit:'Idées de carrousels à valider'},
-    {qui:'Lara', fmt:'Réel', st:'Script à valider', tit:'Scripts de réels à valider'},
-    {qui:'Lara', fmt:'Réel', st:'Idée à valider', tit:'Idées de réels à valider'},
-    {qui:'Carole-Anne', fmt:'Réel', st:'À tourner', tit:'Réels à tourner'},
+  /* Ce qui attend */
+  const GR=[
+    ['Lara','Carrousel','À valider','Carrousels à valider'],
+    ['Lara','Carrousel','Idée à valider','Idées de carrousels'],
+    ['Lara','Réel','Script à valider','Scripts de réels'],
+    ['Lara','Réel','Idée à valider','Idées de réels'],
+    ['Carole-Anne','Réel','À tourner','Réels à tourner'],
   ];
-  // tout autre statut marqué dans "qui_doit_agir" mais absent de la liste ci-dessus est ajouté automatiquement
-  Object.entries(QUI).forEach(([st,qui])=>['Carrousel','Réel'].forEach(f=>{
-    if(!GROUPES.some(g=>g.st===st&&g.fmt===f) && C.some(x=>x.format===f&&x.statut===st)) GROUPES.push({qui,fmt:f,st,tit:(f==='Réel'?'Réels':'Carrousels')+' : '+st.toLowerCase()});
-  }));
-  const blocQui = (qui,cls) => {
-    const gs = GROUPES.filter(g=>g.qui===qui).map(g=>({...g, items:C.filter(x=>x.format===g.fmt&&x.statut===g.st)})).filter(g=>g.items.length);
-    const total = gs.reduce((s,g)=>s+g.items.length,0);
-    let b = `<div class="qui ${cls}"><div class="qui-tete"><h3>Pour ${esc(qui)}</h3><span class="pastille">${total}</span></div>`;
-    if(!total) b += `<div class="vide">Rien en attente 🎉</div>`;
-    gs.forEach(g=>{
-      b += `<div class="groupe"><div class="groupe-tit">${esc(g.tit)} (${g.items.length})</div>`;
-      g.items.forEach(x=>{
-        const m = [x.date ? 'Prévu ' + dateCourte(x.date) : '', x.note].filter(Boolean).map(esc).join(' · ');
-        b += `<div class="item"><div><div class="t">${esc(x.titre)}</div>${m?`<div class="m">${m}</div>`:''}</div>${x.lien?lienHTML(x,'btn-lien'):'<span class="sans-lien">lien à venir</span>'}</div>`;
-      });
-      b += `</div>`;
-    });
-    return b + `</div>`;
+  const attendQui = qui => {
+    const gs=GR.filter(g=>g[0]===qui).map(g=>({tit:g[3],items:C.filter(x=>x.format===g[1]&&x.statut===g[2])})).filter(g=>g.items.length);
+    const tot=gs.reduce((s,g)=>s+g.items.length,0);
+    let h=`<div class="qui">${qui} · ${tot}</div>`;
+    if(!tot) return h+'<p class="rien">Rien en attente.</p>';
+    gs.forEach(g=>{ h+=`<div class="grp">${g.tit}<span>${g.items.length}</span></div><div class="liste">${g.items.map(x=>ligne(x,x.date?'Prévu '+court(x.date):'')).join('')}</div>`; });
+    return h;
   };
-  h += `<h2>Ce qui vous attend</h2><p class="sous">Tout ce qui attend une réponse de votre côté. Ouvrez, puis répondez sur WhatsApp.</p>
-    <section class="attend">${blocQui('Lara','')}${blocQui('Carole-Anne','ca')}</section>`;
+  const totAttente = GR.reduce((s,g)=>s+C.filter(x=>x.format===g[1]&&x.statut===g[2]).length,0);
 
-  /* ---------- 3. La semaine ---------- */
-  const lundi = lundiDe(AUJ);
-  const estPrevu = x => x.date && (
-      (x.format==='Carrousel' && ['Programmé','Publié','À valider','À créer'].includes(x.statut)) ||
-      (x.format==='Réel' && ['Prêt','Publié'].includes(x.statut)));
-  h += `<h2>Cette semaine</h2><p class="sous">Du ${fmt(lundi,{day:'numeric',month:'long'})} au ${fmt(plusJours(lundi,6),{day:'numeric',month:'long'})}. Un jour = un réel s'il y en a un de prêt, sinon un carrousel.</p><section class="semaine">`;
+  /* Semaine */
+  const lundi = plus(AUJ, -((D(AUJ).getUTCDay()+6)%7));
+  const prevu = x => x.date && ((x.format==='Carrousel'&&['Programmé','Publié','À valider','À créer'].includes(x.statut))||(x.format==='Réel'&&['Prêt','Publié'].includes(x.statut)));
+  let sem='<div class="liste">';
   for(let i=0;i<7;i++){
-    const j = plusJours(lundi,i);
-    const du = C.filter(x=>x.date===j && estPrevu(x));
-    const r = du.filter(x=>x.format==='Réel'), c = du.filter(x=>x.format==='Carrousel');
-    let contenu = '';
-    const pj = (x,cls) => `<div class="pj ${cls}"><span class="f">${x.format}${x.statut==='Publié'?' · <span class="ok-pub">publié ✓</span>':x.statut!=='Programmé'&&x.statut!=='Prêt'?' · '+esc(x.statut.toLowerCase()):''}</span>${esc(x.titre)}</div>`;
-    if(r.length){ contenu += r.map(x=>pj(x,'reel')).join(''); contenu += c.map(x=>`<div class="pj decale"><span class="f">Carrousel · à décaler</span>${esc(x.titre)}</div>`).join(''); }
-    else if(c.length){ contenu += c.map(x=>pj(x,'carr')).join(''); }
-    else contenu = `<div class="pj rien">Rien de prévu</div>`;
-    const cls = j===AUJ ? 'auj' : (j<AUJ ? 'passe' : '');
-    h += `<div class="jour ${cls}"><div class="j">${fmt(j,{weekday:'long'})}<small>${fmt(j,{day:'numeric',month:'short'})}</small>${j===AUJ?'<span class="tag-auj">aujourd\'hui</span>':''}</div><div>${contenu}</div></div>`;
+    const j=plus(lundi,i), du=C.filter(x=>x.date===j&&prevu(x));
+    const r=du.filter(x=>x.format==='Réel'), c=du.filter(x=>x.format==='Carrousel');
+    const choisi = r[0]||c[0];
+    let cont;
+    if(!choisi) cont='<span class="vide">Rien de prévu</span>';
+    else {
+      const etat = choisi.statut==='Publié'?'Publié ✓':choisi.statut==='Programmé'||choisi.statut==='Prêt'?choisi.format:choisi.format+' · '+choisi.statut.toLowerCase();
+      const extra = r.length&&c.length ? ' · carrousel à décaler' : '';
+      cont=`<div class="tx"><div class="t">${esc(choisi.titre)}</div><div class="m">${esc(etat+extra)}</div></div>`;
+    }
+    sem+=`<div class="jour ${j===AUJ?'auj':j<AUJ?'passe':''}"><div class="d">${fmt(j,{weekday:'short'}).replace('.','')}<small>${j===AUJ?'auj.':fmt(j,{day:'numeric',month:'short'})}</small></div>${choisi?pt(choisi):''}${cont}</div>`;
   }
-  h += `</section>`;
+  sem+='</div><div class="legende"><span><i class="pt"></i>Carrousel</span><span><i class="pt reel"></i>Réel</span></div>';
 
-  /* ---------- 4 et 5. Pipelines ---------- */
-  const pipeline = (fmtNom,liste,titre) => {
-    const sts = (data.statuts||{})[fmtNom] || [];
-    let p = `<h2>${titre}</h2><p class="sous">${liste.length} ${fmtNom==='Réel'?'réels':'carrousels'} au total, une colonne par étape.</p><p class="glisser">Faites glisser vers la gauche pour voir toutes les étapes →</p><section class="pipe">`;
-    sts.forEach(st=>{
-      let items = liste.filter(x=>x.statut===st);
-      items.sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));
-      if(st==='Publié') items.reverse();
-      const qui = QUI[st];
-      p += `<div class="col"><div class="col-tete"><span>${esc(st)}${qui?`<span class="qui-col ${qui==='Carole-Anne'?'ca':''}">chez ${esc(qui)}</span>`:''}</span><span class="n">${items.length}</span></div>`;
-      if(!items.length) p += `<div class="col-vide">Vide</div>`;
-      items.forEach(x=>{
-        p += `<div class="carte"><div class="t">${esc(x.titre)}</div>
-          <div class="chips"><span class="chip ${x.format==='Réel'?'reel':'carr'}">${esc(x.format)}</span><span class="chip">${esc(x.statut)}</span><span class="chip id">${esc(x.id)}</span></div>
-          <div class="d">${x.date ? (x.statut==='Publié'?'Publié ':'Prévu ')+dateCourte(x.date) : 'Date : pas encore fixée'}</div>
-          ${x.note?`<div class="no">${esc(x.note)}</div>`:''}
-          ${x.lien?lienHTML(x,'lk'):''}</div>`;
-      });
-      p += `</div>`;
-    });
-    return p + `</section>`;
+  /* Bilan court */
+  const fin=plus(lundi,6), dans=(d,a,b)=>d&&d>=a&&d<=b;
+  const pub=C.filter(x=>x.statut==='Publié'&&dans(x.date,lundi,fin)).length;
+  const avance=C.filter(x=>(x.historique||[]).some(e=>dans(e.le,lundi,fin)&&e.statut!=='Publié')).length;
+  const tf=T.filter(t=>t.fait&&dans(t.fait_le||t.deadline,lundi,fin)).length;
+  const prochaine=C.filter(x=>dans(x.date,plus(lundi,7),plus(lundi,13))&&prevu(x)).length;
+  const alertes=[aC?'nouveau lot de carrousels':'', aR?'nouvelles idées de réels':''].filter(Boolean);
+  const bilan=`<div class="bilan">
+    <p><b>Cette semaine :</b> ${pub} publié${pub>1?'s':''}, ${avance} contenu${avance>1?'s':''} avancé${avance>1?'s':''}, ${tf} tâche${tf>1?'s':''} faite${tf>1?'s':''}.</p>
+    <p><b>Semaine prochaine :</b> ${prochaine} contenu${prochaine>1?'s':''} déjà prévu${prochaine>1?'s':''}.${alertes.length?` <span class="alerte-tx">En préparation : ${alertes.join(' et ')}.</span>`:''}</p></div>`;
+
+  /* Étapes */
+  const etapes = (fmtNom,liste) => (data.statuts[fmtNom]||[]).map(st=>{
+    const items=liste.filter(x=>x.statut===st).sort((a,b)=>(a.date||'9').localeCompare(b.date||'9'));
+    if(st==='Publié') items.reverse();
+    const q=QUI[st];
+    return `<details${q?' open':''}><summary><span>${esc(st)}${q?`<span class="chez ${q==='Carole-Anne'?'ca':''}">${q}</span>`:''}</span><span class="n">${items.length}</span></summary>
+      ${items.length?`<div class="liste">${items.map(x=>ligne(x)).join('')}</div>`:''}</details>`;
+  }).join('');
+
+  /* Tâches */
+  const taches = '<div class="liste">'+[...T].sort((a,b)=>(a.fait-b.fait)||(a.deadline||'').localeCompare(b.deadline||'')).map(t=>{
+    const ret=!t.fait&&t.deadline&&t.deadline<AUJ;
+    return `<div class="tache ${t.fait?'fait':''} ${ret?'retard':''}"><span class="case"></span><span class="t">${esc(t.tache)}</span><span class="dl">${t.fait?'fait':(ret?'en retard · ':'')+court(t.deadline)}</span></div>`;
+  }).join('')+'</div>';
+  const nRet=T.filter(t=>!t.fait&&t.deadline&&t.deadline<AUJ).length;
+
+  /* Onglets */
+  const VUES=[
+    {id:'accueil',nom:'Accueil',html:`
+      <h2>En un coup d'œil</h2>
+      <div class="chiffres">
+        <div class="ch ${aC?'alerte':''}"><div class="n">${nProg}</div><div class="l">Carrousels programmés</div><div class="s">${aC?'Moins de '+MIN_C+' : nouveau lot en cours':'Assez d\'avance'}</div></div>
+        <div class="ch"><div class="n">${nPret}</div><div class="l">Réels prêts</div><div class="s">Passent avant les carrousels</div></div>
+        <div class="ch ${aR?'alerte':''}"><div class="n">${nAtt}</div><div class="l">Réels chez vous</div><div class="s">${ri} idées · ${rs} scripts · ${rt} à tourner</div></div>
+        <div class="ch"><div class="n">${nCV}</div><div class="l">Carrousels à valider</div><div class="s">Envoyés sur WhatsApp</div></div>
+      </div>
+      <h2>Ce qui vous attend</h2>
+      ${attendQui('Lara')}${attendQui('Carole-Anne')}`},
+    {id:'semaine',nom:'Semaine',html:`<h2>Du ${fmt(lundi,{day:'numeric',month:'short'})} au ${fmt(fin,{day:'numeric',month:'short'})}</h2>${sem}<h2>Bilan</h2>${bilan}`},
+    {id:'carrousels',nom:'Carrousels',html:`<h2>${carr.length} carrousels par étape</h2>${etapes('Carrousel',carr)}`},
+    {id:'reels',nom:'Réels',html:`<h2>${reels.length} réels par étape</h2>${etapes('Réel',reels)}`},
+    {id:'taches',nom:'Tâches',badge:nRet,html:`<h2>Mes tâches</h2>${taches}`},
+  ];
+  document.getElementById('nav').innerHTML=VUES.map(v=>`<a href="#${v.id}" data-v="${v.id}">${v.nom}${v.badge?'<span class="b"></span>':''}</a>`).join('');
+  app.innerHTML=VUES.map(v=>`<section id="v-${v.id}">${v.html}</section>`).join('');
+  const montre=()=>{
+    const id=(location.hash||'').slice(1); const v=VUES.find(x=>x.id===id)?id:'accueil';
+    document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+    document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));
   };
-  h += pipeline('Carrousel',carr,'Les carrousels');
-  h += pipeline('Réel',reels,'Les réels');
-
-  /* ---------- 6. Mes tâches ---------- */
-  const tri = [...T].sort((a,b)=>(a.fait-b.fait)||(a.deadline||'').localeCompare(b.deadline||''));
-  h += `<h2>Mes tâches</h2><p class="sous">Ce que je fais de mon côté. En rouge : en retard.</p><section class="taches">`;
-  tri.forEach(t=>{
-    const retard = !t.fait && t.deadline && t.deadline < AUJ;
-    h += `<div class="tache ${t.fait?'fait':''} ${retard?'retard':''}"><span class="case"></span><span class="tt">${esc(t.tache)}</span><span class="dl">${t.fait?'Fait':retard?'En retard<br>':'Pour le '}${t.fait?'':dateCourte(t.deadline)}</span></div>`;
-  });
-  h += `</section>`;
-
-  /* ---------- 7. Bilan de la semaine ---------- */
-  const finSem = plusJours(lundi,6), lundiSuiv = plusJours(lundi,7), finSuiv = plusJours(lundi,13);
-  const dans = (d,a,b) => d && d>=a && d<=b;
-  const fait = [];
-  C.filter(x=>x.statut==='Publié' && dans(x.date,lundi,finSem)).forEach(x=>fait.push(`${x.format} publié : ${esc(x.titre)}`));
-  const changements = {};
-  C.forEach(x=>(x.historique||[]).forEach(e=>{ if(dans(e.le,lundi,finSem) && e.statut!=='Publié'){ const k=x.format+'|'+e.statut; (changements[k]=changements[k]||[]).push(x); }}));
-  Object.entries(changements).forEach(([k,l])=>{ const [f,st]=k.split('|'); const nom = f==='Réel'?'réel':'carrousel'; const n=l.length; fait.push(`${n} ${n>1?nom+'s passés':nom+' passé'} en « ${esc(st)} »`); });
-  T.filter(t=>t.fait && dans(t.fait_le||t.deadline,lundi,finSem)).forEach(t=>fait.push(`Tâche faite : ${esc(t.tache)}`));
-  const prevu = [];
-  C.filter(x=>dans(x.date,lundiSuiv,finSuiv) && estPrevu(x)).sort((a,b)=>a.date.localeCompare(b.date)).forEach(x=>prevu.push(`${dateCourte(x.date)} : ${x.format.toLowerCase()} « ${esc(x.titre)} »${x.statut==='À valider'?' (attend votre validation)':''}`));
-  T.filter(t=>!t.fait && t.deadline && t.deadline<=finSuiv).forEach(t=>prevu.push(`Tâche : ${esc(t.tache)}`));
-  const prevuAlerte = [];
-  if(alerteC) prevuAlerte.push(`Nouveau lot de carrousels (${nProg} programmés, il en faut ${MIN_C})`);
-  if(alerteR) prevuAlerte.push(`Nouvelles idées de réels (${nAttente} en attente chez vous, il en faut ${MIN_R})`);
-  h += `<h2>Le bilan de la semaine</h2><p class="sous">Calculé tout seul à partir de la page.</p><section class="bilan">
-    <div class="bloc fait"><h3>Fait cette semaine</h3>${fait.length?'<ul>'+fait.map(x=>`<li>${x}</li>`).join('')+'</ul>':'<p>Rien pour l\'instant.</p>'}</div>
-    <div class="bloc prevu"><h3>Prévu la semaine prochaine</h3><ul>${prevuAlerte.map(x=>`<li class="alerte-li">${x}</li>`).join('')}${prevu.map(x=>`<li>${x}</li>`).join('')}${(!prevu.length&&!prevuAlerte.length)?'<li>Rien de prévu pour l\'instant.</li>':''}</ul></div>
-  </section>`;
-
-  app.innerHTML = h;
+  window.addEventListener('hashchange',()=>{montre();window.scrollTo(0,0);});
+  montre();
 })();
 </script>
 </body>
