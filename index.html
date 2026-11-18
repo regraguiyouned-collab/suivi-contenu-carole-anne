@@ -207,7 +207,7 @@ a.carte:hover{background:#FDFBF9}
   const taches=()=>`<h2>Mes tâches</h2><div class="taches">`+[...T].sort((a,b)=>(a.fait-b.fait)||(a.deadline||'').localeCompare(b.deadline||'')).map(t=>{
     const ret=!t.fait&&t.deadline&&t.deadline<AUJ;
     return `<div class="tache ${t.fait?'fait':''} ${ret?'retard':''}"><span class="ck"></span><span class="t">${esc(t.tache)}</span><span class="dl">${t.fait?'fait':(ret?'en retard · ':'')+court(t.deadline)}</span></div>`;
-  }).join('')+`</div>`;
+  }).join('')+(T.length?'':'<p class="vide">Aucune tâche pour l\'instant.</p>')+`</div>`;
 
   /* Vues */
   const attReels=ri+rs+rt, attCarr=nb(carr,'Idée à valider')+nCV;
