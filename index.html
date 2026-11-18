@@ -37,8 +37,8 @@ hr{border:0;border-top:1px solid var(--trait);margin:16px 0}
 .st.alerte b{color:var(--rouge-f)}
 
 /* Onglets de vue */
-.vues{display:flex;gap:2px;margin:22px 0 0;border-bottom:1px solid var(--trait)}
-.vues a{text-decoration:none;padding:8px 12px;font-weight:800;font-size:14.5px;color:var(--gris);border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;gap:6px;align-items:center}
+.vues{display:flex;gap:0;margin:22px 0 0;border-bottom:1px solid var(--trait);overflow-x:auto;scrollbar-width:none}
+.vues a{white-space:nowrap;flex:none;text-decoration:none;padding:8px 10px;font-weight:800;font-size:14.5px;color:var(--gris);border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;gap:6px;align-items:center}
 .vues a.on{color:var(--encre);border-color:var(--encre)}
 .vues .b{background:var(--rouge);color:#fff;border-radius:999px;font-size:11px;padding:0 6px;line-height:16px}
 section{display:none}
@@ -150,7 +150,7 @@ a.carte:hover{background:#FDFBF9}
     document.getElementById('maj').innerHTML='Dernière mise à jour : '+fmt(d,{day:'numeric',month:'long'})+(hh?' à '+parseInt(hh,10)+' h '+mm:'')+(data.donnees_exemple?'<span class="ex">EXEMPLE</span>':'');
   }
 
-  const C=data.contenus||[], T=data.taches||[], QUI=data.qui_doit_agir||{}, R=data.regles||{};
+  const C=(data.contenus||[]).filter(x=>!x.retire), T=(data.taches||[]).filter(t=>!t.retire), QUI=data.qui_doit_agir||{}, R=data.regles||{};
   const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??15;
   const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
   const nb=(l,s)=>l.filter(x=>x.statut===s).length;

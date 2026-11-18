@@ -1,8 +1,29 @@
 {
- "_lisez_moi": "Seul fichier de données de la page de suivi. La page calcule tout le reste (compteurs, semaine, alertes, bilan). Chaque contenu garde son id pour toujours. 'sources' est réservé au futur branchement (Drive, Google Doc de scripts, Metricool).",
- "derniere_mise_a_jour": "2026-11-18T20:39",
+ "_lisez_moi": "Seul fichier de données de la page. La page calcule le reste. Chaque contenu garde son id pour toujours ; on ne supprime pas, on passe 'retire': true. 'sources' dit d'où vient chaque contenu (doc Google + numéro dans le doc). Le suivi automatique est dans le dossier 'suivi' (local, pas sur GitHub).",
+ "derniere_mise_a_jour": "2026-11-18T21:05",
  "donnees_exemple": false,
- "liens_rapides": [],
+ "liens_rapides": [
+  {
+   "nom": "Idées carrousels",
+   "url": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit"
+  },
+  {
+   "nom": "Idées réels",
+   "url": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit"
+  },
+  {
+   "nom": "Scripts à tourner",
+   "url": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit"
+  },
+  {
+   "nom": "Drive des tournages",
+   "url": "https://drive.google.com/drive/folders/193bL_5t9wUADeCXe0eLPEQITqXkbHpsl"
+  },
+  {
+   "nom": "Freebie",
+   "url": "https://regraguiyouned-collab.github.io/plan-4-etapes/"
+  }
+ ],
  "regles": {
   "carrousels_programmes_minimum": 10,
   "reels_en_attente_minimum": 15
@@ -44,9 +65,11 @@
    "note": "Programmé sur Business Suite, 20 h",
    "historique": [],
    "sources": {
+    "doc": null,
+    "numero_dans_doc": null,
     "drive": null,
-    "doc_scripts": null,
-    "metricool": null
+    "metricool": null,
+    "business_suite": true
    }
   },
   {
@@ -59,9 +82,11 @@
    "note": "Programmé sur Business Suite, 12 h",
    "historique": [],
    "sources": {
+    "doc": null,
+    "numero_dans_doc": null,
     "drive": null,
-    "doc_scripts": null,
-    "metricool": null
+    "metricool": null,
+    "business_suite": true
    }
   },
   {
@@ -74,9 +99,11 @@
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
+    "doc": null,
+    "numero_dans_doc": null,
     "drive": null,
-    "doc_scripts": null,
-    "metricool": null
+    "metricool": null,
+    "business_suite": true
    }
   },
   {
@@ -89,9 +116,11 @@
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
+    "doc": null,
+    "numero_dans_doc": null,
     "drive": null,
-    "doc_scripts": null,
-    "metricool": null
+    "metricool": null,
+    "business_suite": true
    }
   },
   {
@@ -104,11 +133,808 @@
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
+    "doc": null,
+    "numero_dans_doc": null,
     "drive": null,
-    "doc_scripts": null,
+    "metricool": null,
+    "business_suite": true
+   }
+  },
+  {
+   "id": "C-006",
+   "format": "Carrousel",
+   "titre": "Si tu as entre 35 et 50 ans, lis ça",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 1, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 1,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-007",
+   "format": "Carrousel",
+   "titre": "Gérer plus de 150 Airbnb sans les acheter : sa méthode exacte",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 2, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 2,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-008",
+   "format": "Carrousel",
+   "titre": "Bon salaire, mais pas le temps de vivre",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 3, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 3,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-009",
+   "format": "Carrousel",
+   "titre": "Le ménage d'un Airbnb, ce n'est pas un ménage classique",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 4, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 4,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-010",
+   "format": "Carrousel",
+   "titre": "Ton job te vide mais tu ne peux pas partir ? Fais ça",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 5, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 5,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-011",
+   "format": "Carrousel",
+   "titre": "C'est quoi, être co-hôte Airbnb ?",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 6, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 6,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-012",
+   "format": "Carrousel",
+   "titre": "Tout le monde est remplaçable au travail",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 7, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 7,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-013",
+   "format": "Carrousel",
+   "titre": "10 business « ennuyeux » qui marchent toujours",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 8, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 8,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-014",
+   "format": "Carrousel",
+   "titre": "Ce qu'on imaginait vs la vraie vie",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 9, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 9,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-015",
+   "format": "Carrousel",
+   "titre": "Ce qu'on fait pour éviter les plaintes des voyageurs",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 10, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 10,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-016",
+   "format": "Carrousel",
+   "titre": "Le vrai prix d'un job confortable",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 11, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 11,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-017",
+   "format": "Carrousel",
+   "titre": "Les mamans vont toutes repenser leur carrière",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 12, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 12,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-018",
+   "format": "Carrousel",
+   "titre": "5 métiers où le client revient toujours",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 13, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 13,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-019",
+   "format": "Carrousel",
+   "titre": "Le burn-out n'est pas une faiblesse",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 14, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 14,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-020",
+   "format": "Carrousel",
+   "titre": "Notre checklist de ménage, pièce par pièce",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 15, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 15,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-021",
+   "format": "Carrousel",
+   "titre": "Elle a gardé son salaire pour financer sa sortie",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 16, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 16,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-022",
+   "format": "Carrousel",
+   "titre": "Les 7 étapes du salariat",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 17, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 17,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-023",
+   "format": "Carrousel",
+   "titre": "Comment bien lancer une nouvelle annonce",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 18, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 18,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-024",
+   "format": "Carrousel",
+   "titre": "La crise de milieu de carrière des mamans qui travaillent",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 19, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 19,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-025",
+   "format": "Carrousel",
+   "titre": "Tu as craqué au travail, mais tu ne peux pas partir tout de suite",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 20, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 20,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-026",
+   "format": "Carrousel",
+   "titre": "Les 7 choses à avoir dans chaque salle de bain",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Idée n° 21, envoyée le 18 nov.",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 21,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-027",
+   "format": "Carrousel",
+   "titre": "Le pire avis qu'on a reçu, et ce qu'on a fait",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Il faut l'histoire du pire avis (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 22,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-028",
+   "format": "Carrousel",
+   "titre": "Ce logement rapportait X par mois, aujourd'hui il fait Y",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Il faut les vrais chiffres d'un logement (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 23,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-029",
+   "format": "Carrousel",
+   "titre": "J'ai quitté le métier de mes rêves : mon histoire",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
+   "note": "Il faut son parcours en quelques phrases (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
+    "numero_dans_doc": 24,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-001",
+   "format": "Réel",
+   "titre": "Comment recommencer à 40 ou 50 ans, même si tu as tout perdu",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 1,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-002",
+   "format": "Réel",
+   "titre": "Ce que personne ne te dit quand tu quittes le salariat",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Il faut son récit de l'après-salariat (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 2,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-003",
+   "format": "Réel",
+   "titre": "Quelques mois après mon départ, j'ai reçu un appel",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Il faut l'anecdote de l'appel (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 3,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-004",
+   "format": "Réel",
+   "titre": "Je soutiens toutes les femmes qui ne veulent plus de promotion",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 4,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-005",
+   "format": "Réel",
+   "titre": "Si tu as un travail, cette vidéo est pour toi",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 5,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-006",
+   "format": "Réel",
+   "titre": "Ce que j'aurais aimé dire à la femme que j'étais",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 6,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-007",
+   "format": "Réel",
+   "titre": "Tu t'ennuies au travail juste après avoir maîtrisé ton métier ?",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 7,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-008",
+   "format": "Réel",
+   "titre": "J'ai [âge] ans et j'en suis à ma [X]e vie pro",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Il faut son âge et ses métiers (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 8,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-009",
+   "format": "Réel",
+   "titre": "Pour mes copines de 40 ans qui ont peur de se faire avoir par une formation",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 9,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-010",
+   "format": "Réel",
+   "titre": "Tier list des business qu'on vend aux femmes de 40 ans",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 10,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-011",
+   "format": "Réel",
+   "titre": "Si j'entends encore qu'on a toutes les mêmes 24 heures…",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 11,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-012",
+   "format": "Réel",
+   "titre": "Gérer des Airbnb n'est pas un « side hustle »",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 12,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-013",
+   "format": "Réel",
+   "titre": "Le pire avis qu'on a reçu (ou celui qu'on a fait supprimer)",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Il faut l'histoire d'un mauvais avis (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 13,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-014",
+   "format": "Réel",
+   "titre": "Comment on protège les logements des mauvais voyageurs",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 14,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-015",
+   "format": "Réel",
+   "titre": "Logement rempli à 100 % ? Tu perds de l'argent",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Corrigée le 12 nov. après tes retours",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 15,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-016",
+   "format": "Réel",
+   "titre": "Combien m'a rapporté un logement la 1re année, mois par mois",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0/edit",
+   "note": "Il faut les chiffres mois par mois (Carole-Anne)",
+   "historique": [],
+   "sources": {
+    "doc": "1NnxHb9MJY7DMSal71oK2p0aVuo5I2CYg88lIL5FJub0",
+    "numero_dans_doc": 16,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-017",
+   "format": "Réel",
+   "titre": "Corvées de départ",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 1,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-018",
+   "format": "Réel",
+   "titre": "Crise de la quarantaine",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 2,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-019",
+   "format": "Réel",
+   "titre": "Locataire à 40 ans",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 3,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-020",
+   "format": "Réel",
+   "titre": "Femme de 40 ans",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 4,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-021",
+   "format": "Réel",
+   "titre": "CDI 2026",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 5,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-022",
+   "format": "Réel",
+   "titre": "6 choses avant de quitter son job",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 6,
+    "drive": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-023",
+   "format": "Réel",
+   "titre": "Recommencer",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/document/d/1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E/edit",
+   "note": "Script corrigé le 12 nov. (coiffure retirée)",
+   "historique": [],
+   "sources": {
+    "doc": "1jy3t1uhkeAZRYn6UDQOzPWu1VA7J3OnD4td2LUjvb5E",
+    "numero_dans_doc": 7,
+    "drive": null,
     "metricool": null
    }
   }
  ],
- "taches": []
+ "taches": [
+  {
+   "id": "T-001",
+   "tache": "Freebie : ManyChat ne renvoie plus vers le challenge",
+   "deadline": "2026-11-18",
+   "fait": true,
+   "fait_le": "2026-11-18"
+  },
+  {
+   "id": "T-002",
+   "tache": "Freebie : envoyer la V1 à Lara",
+   "deadline": "2026-11-18",
+   "fait": true,
+   "fait_le": "2026-11-18"
+  },
+  {
+   "id": "T-003",
+   "tache": "Freebie : demander le mail dès la 1re page du quiz",
+   "deadline": "2026-11-18",
+   "fait": true,
+   "fait_le": "2026-11-18"
+  },
+  {
+   "id": "T-004",
+   "tache": "Freebie : mettre le lien au nom de « Carole-Anne conciergerie »",
+   "deadline": null,
+   "fait": false,
+   "fait_le": null
+  },
+  {
+   "id": "T-005",
+   "tache": "Envoyer à Lara le planning de posting mis à jour",
+   "deadline": "2026-11-18",
+   "fait": false,
+   "fait_le": null
+  },
+  {
+   "id": "T-006",
+   "tache": "Script de la vidéo YouTube",
+   "deadline": "2026-11-08",
+   "fait": false,
+   "fait_le": null
+  }
+ ]
 }
