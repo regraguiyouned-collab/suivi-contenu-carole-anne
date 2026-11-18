@@ -151,7 +151,7 @@ a.carte:hover{background:#FDFBF9}
   }
 
   const C=data.contenus||[], T=data.taches||[], QUI=data.qui_doit_agir||{}, R=data.regles||{};
-  const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??20;
+  const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??15;
   const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
   const nb=(l,s)=>l.filter(x=>x.statut===s).length;
 

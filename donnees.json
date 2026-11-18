@@ -18,7 +18,7 @@
  ],
  "regles": {
   "carrousels_programmes_minimum": 10,
-  "reels_en_attente_minimum": 20
+  "reels_en_attente_minimum": 15
  },
  "statuts": {
   "Carrousel": [
