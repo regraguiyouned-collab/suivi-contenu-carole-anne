@@ -2,6 +2,20 @@
  "_lisez_moi": "Seul fichier de données de la page de suivi. La page calcule tout le reste (compteurs, semaine, alertes, bilan). Chaque contenu garde son id pour toujours. 'sources' est réservé au futur branchement (Drive, Google Doc de scripts, Metricool).",
  "derniere_mise_a_jour": "2026-11-18T19:30",
  "donnees_exemple": true,
+ "liens_rapides": [
+  {
+   "nom": "Dossier Drive",
+   "url": "https://drive.google.com/"
+  },
+  {
+   "nom": "Scripts",
+   "url": "https://docs.google.com/"
+  },
+  {
+   "nom": "Metricool",
+   "url": "https://app.metricool.com/"
+  }
+ ],
  "regles": {
   "carrousels_programmes_minimum": 10,
   "reels_en_attente_minimum": 20
