@@ -1,6 +1,6 @@
 {
  "_lisez_moi": "Seul fichier de données de la page. La page calcule le reste. Chaque contenu garde son id pour toujours ; on ne supprime pas, on passe 'retire': true. 'sources' dit d'où vient chaque contenu (doc Google + numéro dans le doc). Le suivi automatique est dans le dossier 'suivi' (local, pas sur GitHub).",
- "derniere_mise_a_jour": "2026-11-18T21:05",
+ "derniere_mise_a_jour": "2026-11-18T21:30",
  "donnees_exemple": false,
  "liens_rapides": [
   {
@@ -59,11 +59,16 @@
    "id": "C-001",
    "format": "Carrousel",
    "titre": "Pas de 2e job",
-   "statut": "Programmé",
+   "statut": "Publié",
    "date": "2026-11-18",
-   "lien": "",
-   "note": "Programmé sur Business Suite, 20 h",
-   "historique": [],
+   "lien": "https://www.instagram.com/caroleanneconciergerie/",
+   "note": "Publié le 18 nov. à 20 h",
+   "historique": [
+    {
+     "statut": "Publié",
+     "le": "2026-11-18"
+    }
+   ],
    "sources": {
     "doc": null,
     "numero_dans_doc": null,
@@ -78,7 +83,7 @@
    "titre": "Les 5 questions",
    "statut": "Programmé",
    "date": "2026-11-19",
-   "lien": "",
+   "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630",
    "note": "Programmé sur Business Suite, 12 h",
    "historique": [],
    "sources": {
@@ -95,7 +100,7 @@
    "titre": "Les 2 choses",
    "statut": "Programmé",
    "date": "2026-11-20",
-   "lien": "",
+   "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630",
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
@@ -112,7 +117,7 @@
    "titre": "Ce que j'aurais aimé savoir",
    "statut": "Programmé",
    "date": "2026-11-21",
-   "lien": "",
+   "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630",
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
@@ -129,7 +134,7 @@
    "titre": "Les 8 étapes",
    "statut": "Programmé",
    "date": "2026-11-22",
-   "lien": "",
+   "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630",
    "note": "Programmé sur Business Suite, 7 h",
    "historique": [],
    "sources": {
@@ -899,35 +904,40 @@
    "tache": "Freebie : ManyChat ne renvoie plus vers le challenge",
    "deadline": "2026-11-18",
    "fait": true,
-   "fait_le": "2026-11-18"
+   "fait_le": "2026-11-18",
+   "lien": "https://manychat.com/"
   },
   {
    "id": "T-002",
    "tache": "Freebie : envoyer la V1 à Lara",
    "deadline": "2026-11-18",
    "fait": true,
-   "fait_le": "2026-11-18"
+   "fait_le": "2026-11-18",
+   "lien": "https://regraguiyouned-collab.github.io/plan-4-etapes/"
   },
   {
    "id": "T-003",
    "tache": "Freebie : demander le mail dès la 1re page du quiz",
    "deadline": "2026-11-18",
    "fait": true,
-   "fait_le": "2026-11-18"
+   "fait_le": "2026-11-18",
+   "lien": "https://regraguiyouned-collab.github.io/plan-4-etapes/"
   },
   {
    "id": "T-004",
    "tache": "Freebie : mettre le lien au nom de « Carole-Anne conciergerie »",
    "deadline": null,
    "fait": false,
-   "fait_le": null
+   "fait_le": null,
+   "lien": "https://regraguiyouned-collab.github.io/plan-4-etapes/"
   },
   {
    "id": "T-005",
    "tache": "Envoyer à Lara le planning de posting mis à jour",
    "deadline": "2026-11-18",
    "fait": false,
-   "fait_le": null
+   "fait_le": null,
+   "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630"
   },
   {
    "id": "T-006",
