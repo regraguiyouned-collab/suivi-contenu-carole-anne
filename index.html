@@ -171,8 +171,16 @@ a.tache:hover .t{text-decoration:underline}
   /* Chiffres */
   const nProg=nb(carr,'Programmé'), nPret=nb(reels,'Prêt'), nCV=nb(carr,'À valider');
   const ri=nb(reels,'Idée à valider'), rs=nb(reels,'Script à valider'), rt=nb(reels,'À tourner'), nAtt=ri+rs+rt;
+  // Moins de 10 programmés : qui doit agir ? Si la suite attend Lara (idées ou carrousels à valider) et que rien n'est de mon côté, c'est rouge chez eux.
+  const cChezEux=nb(carr,'Idée à valider')+nb(carr,'À valider'), cChezMoi=nb(carr,'Idée à faire')+nb(carr,'À créer');
+  let progCls='', progTxt='';
+  if(nProg<MIN_C){
+    if(cChezMoi){ progCls='moi'; progTxt=` · ${cChezMoi} en cours de mon côté`; }
+    else if(cChezEux){ progCls='alerte'; progTxt=` · la suite attend votre validation (${cChezEux})`; }
+    else { progCls='moi'; progTxt=' · je prépare un nouveau lot'; }
+  }
   document.getElementById('stats').innerHTML=`
-    <div class="st ${nProg<MIN_C?'moi':''}"><b>${nProg}</b> carrousels programmés${nProg<MIN_C?' · nouveau lot en cours':''}</div>
+    <div class="st ${progCls}"><b>${nProg}</b> carrousel${nProg>1?'s':''} programmé${nProg>1?'s':''}${progTxt}</div>
     <div class="st"><b>${nPret}</b> réel${nPret>1?'s':''} prêt${nPret>1?'s':''}</div>
     <div class="st ${nAtt?'alerte':''}"><b>${nAtt}</b> réels chez vous <span>(${ri} idées, ${rs} scripts, ${rt} à tourner)</span></div>${nAtt<MIN_R?`<div class="st moi">moins de ${MIN_R} : je prépare d'autres idées de réels</div>`:''}
     <div class="st ${nCV?'alerte':''}"><b>${nCV}</b> carrousel${nCV>1?'s':''} à valider</div>`;
