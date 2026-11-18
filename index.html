@@ -90,16 +90,21 @@ a.carte .t::after{content:' ↗';color:var(--rouge)}
 .ev.reel{background:var(--bleu);color:#0F5559}
 .ev.carr{background:var(--rose);color:#A3102F}
 .ev.pub{opacity:.55}
-.detail{display:none}
-@media (max-width:700px){
+.case{cursor:pointer}
+.case:hover{background:#FDFBF9}
+.case.sel{outline:2px solid var(--encre);outline-offset:-2px}
+.ev::after{content:' ↗'}
+.detail{display:none;margin-top:10px;background:var(--fond-col);border-radius:10px;padding:10px 12px;font-size:14px}
+.detail.on{display:block}
+.detail .d{font-weight:900;margin-bottom:4px}
+.detail .d::first-letter{text-transform:uppercase}
+.detail a,.detail div.it{display:block;padding:6px 0;font-weight:700;text-decoration:none}
+.detail a:hover{text-decoration:underline}
+@media (max-width:560px){
   .case{min-height:58px;padding:3px;cursor:pointer}
   .num{text-align:center}
   .ev{font-size:0;height:6px;padding:0;margin:3px auto 0;width:70%;border-radius:3px}
   .case.sel{outline:2px solid var(--encre);outline-offset:-2px}
-  .detail{display:block;margin-top:10px;background:var(--fond-col);border-radius:10px;padding:10px 12px;font-size:14px}
-  .detail .d{font-weight:900;margin-bottom:4px}
-  .detail .d::first-letter{text-transform:uppercase}
-  .detail a,.detail div.it{display:block;padding:4px 0;font-weight:700;text-decoration:none}
   h1{font-size:30px}
 }
 
@@ -234,12 +239,12 @@ a.tache:hover .t{text-decoration:underline}
       if(d===0) mois[id]=AUJ.slice(0,7); else { const x=D(cur+'-15'); x.setUTCMonth(x.getUTCMonth()+d); mois[id]=x.toISOString().slice(0,7); }
       rendre(); return; }
     const c=e.target.closest('.case');
-    if(c && window.matchMedia('(max-width:700px)').matches){
-      e.preventDefault();
+    if(e.target.closest('a')) return;
+    if(c){
       const grille=c.parentElement, id=grille.dataset.grille;
       grille.querySelectorAll('.case.sel').forEach(x=>x.classList.remove('sel')); c.classList.add('sel');
       const liste=(id==='reels'?reels:carr).filter(x=>x.date===c.dataset.j);
-      app.querySelector(`[data-detail="${id}"]`).innerHTML=`<div class="d">${fmt(c.dataset.j,{weekday:'long',day:'numeric',month:'long'})}</div>`+
+      const det=app.querySelector(`[data-detail="${id}"]`); det.classList.add('on'); det.innerHTML=`<div class="d">${fmt(c.dataset.j,{weekday:'long',day:'numeric',month:'long'})}</div>`+
         (liste.length?liste.map(x=>x.lien?`<a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.titre)} · <span style="color:var(--gris)">${esc(x.statut)}</span> ↗</a>`:`<div class="it">${esc(x.titre)} · ${esc(x.statut)}</div>`).join(''):'<div class="it" style="color:var(--gris)">Rien de prévu ce jour-là.</div>');
     }
   });
