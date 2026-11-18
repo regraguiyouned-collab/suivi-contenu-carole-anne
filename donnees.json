@@ -1,0 +1,735 @@
+{
+ "_lisez_moi": "Seul fichier de données de la page de suivi. La page calcule tout le reste (compteurs, semaine, alertes, bilan). Chaque contenu garde son id pour toujours. 'sources' est réservé au futur branchement (Drive, Google Doc de scripts, Metricool).",
+ "derniere_mise_a_jour": "2026-11-18T19:30",
+ "donnees_exemple": true,
+ "regles": {
+  "carrousels_programmes_minimum": 10,
+  "reels_en_attente_minimum": 20
+ },
+ "statuts": {
+  "Carrousel": [
+   "Idée à faire",
+   "Idée à valider",
+   "À créer",
+   "À valider",
+   "Programmé",
+   "Publié"
+  ],
+  "Réel": [
+   "Idée à faire",
+   "Idée à valider",
+   "Script à faire",
+   "Script à valider",
+   "À tourner",
+   "À monter",
+   "Prêt",
+   "Publié"
+  ]
+ },
+ "qui_doit_agir": {
+  "Idée à valider": "Lara",
+  "À valider": "Lara",
+  "Script à valider": "Lara",
+  "À tourner": "Carole-Anne"
+ },
+ "contenus": [
+  {
+   "id": "C-001",
+   "format": "Carrousel",
+   "titre": "Combien gagne vraiment une co-hôte avec 5 logements",
+   "statut": "Publié",
+   "date": "2026-11-16",
+   "lien": "https://drive.google.com/",
+   "note": "Bon départ : 40 enregistrements le 1er jour",
+   "historique": [
+    {
+     "statut": "Publié",
+     "le": "2026-11-16"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-002",
+   "format": "Carrousel",
+   "titre": "Les 3 erreurs qui font fuir les propriétaires",
+   "statut": "Programmé",
+   "date": "2026-11-18",
+   "lien": "https://drive.google.com/",
+   "note": "Programmé à 20 h",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-003",
+   "format": "Carrousel",
+   "titre": "Ma checklist avant chaque arrivée de voyageurs",
+   "statut": "Programmé",
+   "date": "2026-11-20",
+   "lien": "https://drive.google.com/",
+   "note": "Programmé à 7 h",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-004",
+   "format": "Carrousel",
+   "titre": "Comment j'ai trouvé mon premier propriétaire",
+   "statut": "Programmé",
+   "date": "2026-11-21",
+   "lien": "https://drive.google.com/",
+   "note": "Programmé à 7 h",
+   "historique": [
+    {
+     "statut": "Programmé",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-005",
+   "format": "Carrousel",
+   "titre": "Co-hôte ou conciergerie : quelle différence ?",
+   "statut": "Programmé",
+   "date": "2026-11-22",
+   "lien": "https://drive.google.com/",
+   "note": "Programmé à 7 h",
+   "historique": [
+    {
+     "statut": "Programmé",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-006",
+   "format": "Carrousel",
+   "titre": "Ce que je facture, et pourquoi",
+   "statut": "Programmé",
+   "date": "2026-11-23",
+   "lien": "https://drive.google.com/",
+   "note": "Programmé à 7 h",
+   "historique": [
+    {
+     "statut": "Programmé",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-007",
+   "format": "Carrousel",
+   "titre": "5 phrases pour rassurer un propriétaire",
+   "statut": "À valider",
+   "date": "2026-11-24",
+   "lien": "https://drive.google.com/",
+   "note": "Envoyé à Lara le 17 nov.",
+   "historique": [
+    {
+     "statut": "À valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-008",
+   "format": "Carrousel",
+   "titre": "Le linge : ce que je ne laisse jamais au hasard",
+   "statut": "À valider",
+   "date": "2026-11-25",
+   "lien": "https://drive.google.com/",
+   "note": "Envoyé à Lara le 17 nov.",
+   "historique": [
+    {
+     "statut": "À valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-009",
+   "format": "Carrousel",
+   "titre": "Ma journée type de co-hôte",
+   "statut": "À créer",
+   "date": null,
+   "lien": "",
+   "note": "Idée validée par Lara le 16 nov.",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-16"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-010",
+   "format": "Carrousel",
+   "titre": "Les questions à poser lors de la première visite",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot d'idées du 17 nov.",
+   "historique": [
+    {
+     "statut": "Idée à valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-011",
+   "format": "Carrousel",
+   "titre": "Pourquoi je refuse certains logements",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot d'idées du 17 nov.",
+   "historique": [
+    {
+     "statut": "Idée à valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-012",
+   "format": "Carrousel",
+   "titre": "Ce que les voyageurs regardent en premier dans une annonce",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot d'idées du 17 nov.",
+   "historique": [
+    {
+     "statut": "Idée à valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-013",
+   "format": "Carrousel",
+   "titre": "Les avis 5 étoiles : ma méthode",
+   "statut": "Idée à faire",
+   "date": null,
+   "lien": "",
+   "note": "Inspiré d'un carrousel qui a bien marché",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "C-014",
+   "format": "Carrousel",
+   "titre": "Commencer sans avoir de logement à soi",
+   "statut": "Idée à faire",
+   "date": null,
+   "lien": "",
+   "note": "Question souvent posée en commentaire",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-001",
+   "format": "Réel",
+   "titre": "Visite express d'un appartement prêt pour les voyageurs",
+   "statut": "Publié",
+   "date": "2026-11-17",
+   "lien": "https://drive.google.com/",
+   "note": "",
+   "historique": [
+    {
+     "statut": "Publié",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-002",
+   "format": "Réel",
+   "titre": "Le départ des voyageurs en 30 secondes",
+   "statut": "Prêt",
+   "date": "2026-11-19",
+   "lien": "https://drive.google.com/",
+   "note": "Monté, sous-titres faits",
+   "historique": [
+    {
+     "statut": "Prêt",
+     "le": "2026-11-16"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-003",
+   "format": "Réel",
+   "titre": "Je refais un lit d'hôtel en 1 minute",
+   "statut": "À monter",
+   "date": null,
+   "lien": "https://drive.google.com/",
+   "note": "Rushes reçus le 15 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-004",
+   "format": "Réel",
+   "titre": "Ce que je vérifie en arrivant dans un logement",
+   "statut": "À tourner",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Script validé le 10 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-005",
+   "format": "Réel",
+   "titre": "Mon kit d'accueil pour les voyageurs",
+   "statut": "À tourner",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Script validé le 10 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-006",
+   "format": "Réel",
+   "titre": "Une journée avec moi entre 2 réservations",
+   "statut": "À tourner",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "À filmer sur une journée de départ",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-007",
+   "format": "Réel",
+   "titre": "« Est-ce que j'ai le droit ? » : ma réponse",
+   "statut": "À tourner",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Face caméra, 45 secondes",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-008",
+   "format": "Réel",
+   "titre": "Les 3 objets que j'ajoute dans chaque logement",
+   "statut": "À tourner",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Script validé le 16 nov.",
+   "historique": [
+    {
+     "statut": "À tourner",
+     "le": "2026-11-16"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-009",
+   "format": "Réel",
+   "titre": "Combien je gagne par logement",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Envoyé à Lara le 17 nov.",
+   "historique": [
+    {
+     "statut": "Script à valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-010",
+   "format": "Réel",
+   "titre": "Mon premier propriétaire, l'histoire",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Envoyé à Lara le 17 nov.",
+   "historique": [
+    {
+     "statut": "Script à valider",
+     "le": "2026-11-17"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-011",
+   "format": "Réel",
+   "titre": "Ce que je dis au premier appel avec un propriétaire",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Envoyé à Lara le 12 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-012",
+   "format": "Réel",
+   "titre": "Réponse au commentaire « c'est saturé »",
+   "statut": "Script à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Envoyé à Lara le 12 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-013",
+   "format": "Réel",
+   "titre": "Avant / après d'une annonce",
+   "statut": "Script à faire",
+   "date": null,
+   "lien": "",
+   "note": "Idée validée le 16 nov.",
+   "historique": [
+    {
+     "statut": "Script à faire",
+     "le": "2026-11-16"
+    }
+   ],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-014",
+   "format": "Réel",
+   "titre": "Le message que j'envoie la veille de l'arrivée",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-015",
+   "format": "Réel",
+   "titre": "Mes erreurs de la première année",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-016",
+   "format": "Réel",
+   "titre": "Le jour où un voyageur a oublié ses clés",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-017",
+   "format": "Réel",
+   "titre": "Combien de temps ça me prend par semaine",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-018",
+   "format": "Réel",
+   "titre": "Ce que je ne ferais plus jamais",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-019",
+   "format": "Réel",
+   "titre": "Une maison à la campagne, ça marche ?",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-020",
+   "format": "Réel",
+   "titre": "Mon téléphone pendant une journée d'arrivées",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-021",
+   "format": "Réel",
+   "titre": "« Tu fais tout toi-même ? » : ma réponse",
+   "statut": "Idée à valider",
+   "date": null,
+   "lien": "https://docs.google.com/",
+   "note": "Lot du 14 nov.",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  },
+  {
+   "id": "R-022",
+   "format": "Réel",
+   "titre": "Les questions que me posent les propriétaires",
+   "statut": "Idée à faire",
+   "date": null,
+   "lien": "",
+   "note": "Repérée dans les messages privés",
+   "historique": [],
+   "exemple": true,
+   "sources": {
+    "drive": null,
+    "doc_scripts": null,
+    "metricool": null
+   }
+  }
+ ],
+ "taches": [
+  {
+   "id": "T-001",
+   "tache": "Envoyer le planning de la semaine à Lara",
+   "deadline": "2026-11-16",
+   "fait": true,
+   "fait_le": "2026-11-16",
+   "exemple": true
+  },
+  {
+   "id": "T-002",
+   "tache": "Envoyer le lot de 3 idées de carrousels à Lara",
+   "deadline": "2026-11-17",
+   "fait": true,
+   "fait_le": "2026-11-17",
+   "exemple": true
+  },
+  {
+   "id": "T-003",
+   "tache": "Créer le carrousel « Ma journée type de co-hôte »",
+   "deadline": "2026-11-17",
+   "fait": false,
+   "fait_le": null,
+   "exemple": true
+  },
+  {
+   "id": "T-004",
+   "tache": "Préparer 10 nouvelles idées de carrousels",
+   "deadline": "2026-11-20",
+   "fait": false,
+   "fait_le": null,
+   "exemple": true
+  },
+  {
+   "id": "T-005",
+   "tache": "Écrire le script « Avant / après d'une annonce »",
+   "deadline": "2026-11-24",
+   "fait": false,
+   "fait_le": null,
+   "exemple": true
+  }
+ ]
+}
