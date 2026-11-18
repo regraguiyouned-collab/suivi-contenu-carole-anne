@@ -124,6 +124,31 @@ a.tache:hover .t{text-decoration:underline}
 .tache .ck{border-color:var(--violet)}
 .tache.retard .t,.tache.retard .dl{color:var(--violet);font-weight:900}
 .tache.retard .ck{border-color:var(--violet);background:var(--violet-pale)}
+
+/* Fiche d'un contenu */
+.carte{cursor:pointer}
+.carte[draggable=true]{cursor:grab}
+.col.drop{outline:2px dashed var(--encre);outline-offset:-2px}
+.voile{position:fixed;inset:0;background:rgba(36,36,36,.35);display:none;z-index:20;align-items:flex-end;justify-content:center}
+.voile.on{display:flex}
+@media (min-width:700px){.voile{align-items:center}}
+.fiche{background:#fff;width:100%;max-width:520px;max-height:88vh;overflow:auto;border-radius:16px 16px 0 0;padding:18px 18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+@media (min-width:700px){.fiche{border-radius:16px}}
+.fiche .haut{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--gris);font-weight:800}
+.fiche .x{border:0;background:var(--fond-col);border-radius:999px;width:32px;height:32px;font-size:18px;cursor:pointer}
+.fiche h3{font-size:20px;line-height:1.25;margin:10px 0 10px;font-weight:900}
+.fiche .ligne{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.fiche .note{font-size:14px;color:var(--gris);margin:0 0 14px}
+.fiche .bt{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:46px;border-radius:12px;font:inherit;font-weight:900;font-size:15px;text-decoration:none;cursor:pointer;border:1.5px solid var(--trait);background:#fff;color:var(--encre);margin:0 0 8px}
+.fiche .bt.noir{background:var(--encre);color:#fff;border-color:var(--encre)}
+.fiche .bt[disabled]{opacity:.45;cursor:not-allowed}
+.fiche .deux{display:flex;gap:8px}.fiche .deux .bt{flex:1}
+.fiche .petit{font-size:12.5px;color:var(--gris-c);margin-top:6px}
+.fiche .hist{font-size:12.5px;color:var(--gris);margin-top:12px;border-top:1px solid var(--trait);padding-top:10px}
+.fiche .qui-btn{display:flex;gap:8px;flex-wrap:wrap}.fiche .qui-btn .bt{flex:1;min-width:120px}
+.pc-rouge{background:var(--rose);color:var(--rouge-f)}.pc-violet{background:var(--violet-pale);color:var(--violet)}.pc-neutre{background:#E4E1DE;color:#5C5357}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--encre);color:#fff;padding:10px 16px;border-radius:999px;font-weight:800;font-size:14px;z-index:30;display:none}
+.toast.on{display:block}
 .pied{margin-top:40px;font-size:12.5px;color:var(--gris-c)}
 </style>
 </head>
@@ -138,7 +163,9 @@ a.tache:hover .t{text-decoration:underline}
   <div class="legende"><span><i style="background:var(--rouge)"></i>Rouge : à faire de votre côté</span><span><i style="background:var(--violet)"></i>Violet : de mon côté</span></div>
   <nav class="vues" id="vues"></nav>
   <div id="app"></div>
-  <p class="pied">Pour valider ou refuser : réponse sur WhatsApp.</p>
+  <div class="voile" id="voile"><div class="fiche" id="fiche"></div></div>
+  <div class="toast" id="toast"></div>
+  <p class="pied">Cliquez sur une carte pour l'ouvrir et la faire avancer.</p>
 </main>
 
 <script>
@@ -155,6 +182,7 @@ a.tache:hover .t{text-decoration:underline}
   const fmt=(iso,o)=>new Intl.DateTimeFormat('fr-FR',{timeZone:'UTC',...o}).format(D(iso));
   const court=iso=>iso?fmt(iso,{day:'numeric',month:'short'}):'';
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const toast=t=>{const e=document.getElementById('toast'); e.textContent=t; e.classList.add('on'); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove('on'),2600);};
 
   /* En-tête */
   document.getElementById('liens').innerHTML=(data.liens_rapides||[]).map(l=>l.url?`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nom)}</a>`:`<span>${esc(l.nom)}</span>`).join('<span class="sep">|</span>');
@@ -163,46 +191,40 @@ a.tache:hover .t{text-decoration:underline}
     document.getElementById('maj').innerHTML='Dernière mise à jour : '+fmt(d,{day:'numeric',month:'long'})+(hh?' à '+parseInt(hh,10)+' h '+mm:'')+(data.donnees_exemple?'<span class="ex">EXEMPLE</span>':'');
   }
 
-  const C=(data.contenus||[]).filter(x=>!x.retire), T=(data.taches||[]).filter(t=>!t.retire && !(t.fait && (t.fait_le||t.deadline) && (t.fait_le||t.deadline) < plus(AUJ,-7))), QUI=data.qui_doit_agir||{}, R=data.regles||{};
+  const QUI=data.qui_doit_agir||{}, R=data.regles||{}, STS=data.statuts||{};
   const MIN_C=R.carrousels_programmes_minimum??10, MIN_R=R.reels_en_attente_minimum??15;
-  const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
-  const nb=(l,s)=>l.filter(x=>x.statut===s).length;
+  const C=(data.contenus||[]).filter(x=>!x.retire);
+  const T=(data.taches||[]).filter(t=>!t.retire && !(t.fait && (t.fait_le||t.deadline) && (t.fait_le||t.deadline) < plus(AUJ,-7)));
+  const parId=Object.fromEntries(C.map(x=>[x.id,x]));
+  const quiDe=st=>QUI[st]||(['Programmé','Prêt','Publié'].includes(st)?'':'Younes');
+  const couleur=st=>{const q=quiDe(st); return q==='Younes'?'violet':(q?'rouge':'neutre');};
 
-  /* Chiffres */
-  const nProg=nb(carr,'Programmé'), nPret=nb(reels,'Prêt'), nCV=nb(carr,'À valider');
-  const ri=nb(reels,'Idée à valider'), rs=nb(reels,'Script à valider'), rt=nb(reels,'À tourner'), nAtt=ri+rs+rt;
-  // Moins de 10 programmés : qui doit agir ? Si la suite attend Lara (idées ou carrousels à valider) et que rien n'est de mon côté, c'est rouge chez eux.
-  const cChezEux=nb(carr,'Idée à valider')+nb(carr,'À valider'), cChezMoi=nb(carr,'Idée à faire')+nb(carr,'À créer');
-  let progCls='', progTxt='';
-  if(nProg<MIN_C){
-    if(cChezMoi){ progCls='moi'; progTxt=` · ${cChezMoi} en cours de mon côté`; }
-    else if(cChezEux){ progCls='alerte'; progTxt=` · la suite attend votre validation (${cChezEux})`; }
-    else { progCls='moi'; progTxt=' · je prépare un nouveau lot'; }
+  /* Déplacements faits sur la page (script Google) */
+  const URL_DEP=data.url_deplacements||'';
+  const appliquer=m=>{const x=parId[m.id]; if(!x||!m.vers||x.statut===m.vers) return; x.statut=m.vers; (x.historique=x.historique||[]).push({statut:m.vers,le:String(m.date||'').slice(0,10),par:m.qui});};
+  if(URL_DEP){
+    try{
+      const r=await (await fetch(URL_DEP+'?action=liste',{cache:'no-store'})).json();
+      const depuis=data.deplacements_lus_jusqu_a||'';
+      (r.deplacements||[]).filter(m=>String(m.date)>depuis).forEach(appliquer);
+    }catch(e){}
   }
-  document.getElementById('stats').innerHTML=`
-    <div class="st ${progCls}"><b>${nProg}</b> carrousel${nProg>1?'s':''} programmé${nProg>1?'s':''}${progTxt}</div>
-    <div class="st"><b>${nPret}</b> réel${nPret>1?'s':''} prêt${nPret>1?'s':''}</div>
-    <div class="st ${nAtt?'alerte':''}"><b>${nAtt}</b> réels chez vous <span>(${ri} idées, ${rs} scripts, ${rt} à tourner)</span></div>${nAtt<MIN_R?`<div class="st moi">moins de ${MIN_R} : je prépare d'autres idées de réels</div>`:''}
-    <div class="st ${nCV?'alerte':''}"><b>${nCV}</b> carrousel${nCV>1?'s':''} à valider</div>`;
+  let qui=''; try{ qui=localStorage.getItem('suivi-qui')||''; }catch(e){}
 
   /* Tableau par statut */
+  const mois={};
   const tableau=(fmtNom,liste)=>{
-    const sts=(data.statuts||{})[fmtNom]||[];
-    return `<div class="board">`+sts.map((st,i)=>{
+    const sts=STS[fmtNom]||[];
+    return `<div class="board">`+sts.map(st=>{
       const items=liste.filter(x=>x.statut===st).sort((a,b)=>(a.date||'9').localeCompare(b.date||'9'));
       if(st==='Publié') items.reverse();
-      const q=QUI[st]||(['Programmé','Prêt','Publié'].includes(st)?'':'Younes');
-      const c=q==='Younes'?'violet':(q?'rouge':'neutre');
-      return `<div class="col ${c}"><div class="col-h"><span class="pill">${esc(st)}</span><span class="n">${items.length}</span>${q?`<span class="chez">chez ${esc(q)}</span>`:''}</div>`+
-        (items.length?items.map(x=>{
-          const inner=`<div class="t">${esc(x.titre)}</div><div class="tags"><span class="tag">${esc(x.format)}</span>${x.date?`<span class="tag">${court(x.date)}</span>`:''}</div>${x.note?`<div class="m">${esc(x.note)}</div>`:''}`;
-          return x.lien?`<a class="carte" href="${esc(x.lien)}" target="_blank" rel="noopener">${inner}</a>`:`<div class="carte">${inner}</div>`;
-        }).join(''):'<div class="vide">Vide</div>')+`</div>`;
+      const q=quiDe(st);
+      return `<div class="col ${couleur(st)}" data-st="${esc(st)}" data-fmt="${esc(fmtNom)}"><div class="col-h"><span class="pill">${esc(st)}</span><span class="n">${items.length}</span>${q?`<span class="chez">chez ${esc(q)}</span>`:''}</div>`+
+        (items.length?items.map(x=>`<div class="carte" data-id="${esc(x.id)}" draggable="true"><div class="t">${esc(x.titre)}</div><div class="tags"><span class="tag">${esc(x.format)}</span>${x.date?`<span class="tag">${court(x.date)}</span>`:''}</div>${x.note?`<div class="m">${esc(x.note)}</div>`:''}</div>`).join(''):'<div class="vide">Vide</div>')+`</div>`;
     }).join('')+`</div>`;
   };
 
   /* Calendrier par format */
-  const mois={};
   const calendrier=(id,liste)=>{
     const m=mois[id]||AUJ.slice(0,7);
     const premier=m+'-01';
@@ -215,52 +237,129 @@ a.tache:hover .t{text-decoration:underline}
       const ev=avecDate.filter(x=>x.date===j);
       const cls=[j.slice(0,7)!==m?'hors':'', j===AUJ?'auj':'', i%7>=5?'we':''].join(' ');
       g+=`<div class="case ${cls}" data-j="${j}"><div class="num"><span>${parseInt(j.slice(8),10)}</span></div>`+
-        ev.map(x=>{const c=`ev ${x.format==='Réel'?'reel':'carr'} ${x.statut==='Publié'?'pub':''}`; const t=esc(x.titre)+(x.statut==='Publié'?' ✓':'');
-          return x.lien?`<a class="${c}" href="${esc(x.lien)}" target="_blank" rel="noopener" title="${esc(x.titre)}">${t}</a>`:`<span class="${c}" title="${esc(x.titre)}">${t}</span>`;}).join('')+`</div>`;
+        ev.map(x=>`<span class="ev ${x.format==='Réel'?'reel':'carr'} ${x.statut==='Publié'?'pub':''}" data-id="${esc(x.id)}" title="${esc(x.titre)}">${esc(x.titre)}${x.statut==='Publié'?' ✓':''}</span>`).join('')+`</div>`;
     }
-    const nom=fmt(premier,{month:'long',year:'numeric'});
-    return `<div class="cal-h"><h2>Calendrier <small>${nom}</small></h2><button data-cal="${id}" data-d="-1">‹</button><button data-cal="${id}" data-d="0">Aujourd'hui</button><button data-cal="${id}" data-d="1">›</button></div>
+    return `<div class="cal-h"><h2>Calendrier <small>${fmt(premier,{month:'long',year:'numeric'})}</small></h2><button data-cal="${id}" data-d="-1">‹</button><button data-cal="${id}" data-d="0">Aujourd'hui</button><button data-cal="${id}" data-d="1">›</button></div>
       <div class="grille" data-grille="${id}">${g}</div><div class="detail" data-detail="${id}"></div>`;
   };
 
-  /* Tâches */
-  const nRet=T.filter(t=>!t.fait&&t.deadline&&t.deadline<AUJ).length;
-  const taches=()=>`<h2>Mes tâches</h2><div class="taches">`+[...T].sort((a,b)=>(a.fait-b.fait)||(a.deadline||'').localeCompare(b.deadline||'')).map(t=>{
-    const ret=!t.fait&&t.deadline&&t.deadline<AUJ;
-    const inner=`<span class="ck"></span><span class="t">${esc(t.tache)}${t.lien?' <span class="go">↗</span>':''}</span><span class="dl">${t.fait?'fait':(ret?'en retard · ':'')+court(t.deadline)}</span>`;
-    return t.lien?`<a class="tache ${t.fait?'fait':''} ${ret?'retard':''}" href="${esc(t.lien)}" target="_blank" rel="noopener">${inner}</a>`:`<div class="tache ${t.fait?'fait':''} ${ret?'retard':''}">${inner}</div>`;
-  }).join('')+(T.length?'':'<p class="vide">Aucune tâche pour l\'instant.</p>')+`</div>`;
-
-  /* Vues */
-  const attReels=ri+rs+rt, attCarr=nb(carr,'Idée à valider')+nCV;
-  const VUES=[
-    {id:'reels',nom:'Réels',badge:attReels,html:()=>`<h2>Réels <small>${reels.length}</small></h2>${tableau('Réel',reels)}${calendrier('reels',reels)}`},
-    {id:'carrousels',nom:'Carrousels',badge:attCarr,html:()=>`<h2>Carrousels <small>${carr.length}</small></h2>${tableau('Carrousel',carr)}${calendrier('carrousels',carr)}`},
-    {id:'taches',nom:'Mes tâches',badge:nRet,moi:true,html:taches},
-  ];
-  document.getElementById('vues').innerHTML=VUES.map(v=>`<a href="#${v.id}" data-v="${v.id}">${v.nom}${v.badge?`<span class="b ${v.moi?'moi':''}">${v.badge}</span>`:''}</a>`).join('');
+  /* Tout ce qui se recalcule (chiffres, onglets, vue) */
+  let VUES=[];
+  const tout=()=>{
+    const carr=C.filter(x=>x.format==='Carrousel'), reels=C.filter(x=>x.format==='Réel');
+    const nb=(l,s)=>l.filter(x=>x.statut===s).length;
+    const nProg=nb(carr,'Programmé'), nPret=nb(reels,'Prêt'), nCV=nb(carr,'À valider');
+    const ri=nb(reels,'Idée à valider'), rs=nb(reels,'Script à valider'), rt=nb(reels,'À tourner'), nAtt=ri+rs+rt;
+    const cChezEux=nb(carr,'Idée à valider')+nCV, cChezMoi=nb(carr,'Idée à faire')+nb(carr,'À créer');
+    let progCls='', progTxt='';
+    if(nProg<MIN_C){
+      if(cChezMoi){ progCls='moi'; progTxt=` · ${cChezMoi} en cours de mon côté`; }
+      else if(cChezEux){ progCls='alerte'; progTxt=` · la suite attend votre validation (${cChezEux})`; }
+      else { progCls='moi'; progTxt=' · je prépare un nouveau lot'; }
+    }
+    document.getElementById('stats').innerHTML=`
+      <div class="st ${progCls}"><b>${nProg}</b> carrousel${nProg>1?'s':''} programmé${nProg>1?'s':''}${progTxt}</div>
+      <div class="st"><b>${nPret}</b> réel${nPret>1?'s':''} prêt${nPret>1?'s':''}</div>
+      <div class="st ${nAtt?'alerte':''}"><b>${nAtt}</b> réels chez vous <span>(${ri} idées, ${rs} scripts, ${rt} à tourner)</span></div>${nAtt<MIN_R?`<div class="st moi">moins de ${MIN_R} : je prépare d'autres idées de réels</div>`:''}
+      <div class="st ${nCV?'alerte':''}"><b>${nCV}</b> carrousel${nCV>1?'s':''} à valider</div>`;
+    const nRet=T.filter(t=>!t.fait&&t.deadline&&t.deadline<AUJ).length;
+    const taches=()=>`<h2>Mes tâches</h2><div class="taches">`+[...T].sort((a,b)=>(a.fait-b.fait)||(a.deadline||'').localeCompare(b.deadline||'')).map(t=>{
+      const ret=!t.fait&&t.deadline&&t.deadline<AUJ;
+      const inner=`<span class="ck"></span><span class="t">${esc(t.tache)}${t.lien?' <span class="go">↗</span>':''}</span><span class="dl">${t.fait?'fait':(ret?'en retard · ':'')+court(t.deadline)}</span>`;
+      return t.lien?`<a class="tache ${t.fait?'fait':''} ${ret?'retard':''}" href="${esc(t.lien)}" target="_blank" rel="noopener">${inner}</a>`:`<div class="tache ${t.fait?'fait':''} ${ret?'retard':''}">${inner}</div>`;
+    }).join('')+(T.length?'':'<p class="vide">Aucune tâche pour l\'instant.</p>')+`</div>`;
+    VUES=[
+      {id:'reels',nom:'Réels',badge:ri+rs+rt,html:()=>`<h2>Réels <small>${reels.length}</small></h2>${tableau('Réel',reels)}${calendrier('reels',reels)}`},
+      {id:'carrousels',nom:'Carrousels',badge:cChezEux,html:()=>`<h2>Carrousels <small>${carr.length}</small></h2>${tableau('Carrousel',carr)}${calendrier('carrousels',carr)}`},
+      {id:'taches',nom:'Mes tâches',badge:nRet,moi:true,html:taches},
+    ];
+    document.getElementById('vues').innerHTML=VUES.map(v=>`<a href="#${v.id}" data-v="${v.id}">${v.nom}${v.badge?`<span class="b ${v.moi?'moi':''}">${v.badge}</span>`:''}</a>`).join('');
+    rendre();
+  };
   const rendre=()=>{
     const id=(location.hash||'').slice(1); const v=VUES.find(x=>x.id===id)||VUES[0];
     document.querySelectorAll('.vues a').forEach(a=>a.classList.toggle('on',a.dataset.v===v.id));
+    const sc=[...app.querySelectorAll('.board')].map(b=>b.scrollLeft);
     app.innerHTML=`<section class="on">${v.html()}</section>`;
+    app.querySelectorAll('.board').forEach((b,i)=>{ if(sc[i]) b.scrollLeft=sc[i]; });
   };
+
+  /* Déplacer une carte */
+  const deplacer=async(x,vers)=>{
+    if(!x||!vers||x.statut===vers) return;
+    if(!URL_DEP){ toast('Les déplacements ne sont pas encore branchés'); return; }
+    if(!qui){ ouvrirFiche(x,vers); return; }
+    const de=x.statut;
+    const m={id:x.id,titre:x.titre,format:x.format,de,vers,qui,date:new Date().toISOString()};
+    appliquer(m); tout(); fermer(); toast(`« ${x.titre.slice(0,40)} » → ${vers}`);
+    try{ await fetch(URL_DEP,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(m)}); }
+    catch(e){ toast('Pas enregistré : vérifiez la connexion'); }
+  };
+
+  /* Fiche */
+  const voile=document.getElementById('voile'), fiche=document.getElementById('fiche');
+  const fermer=()=>voile.classList.remove('on');
+  const ouvrirFiche=(x,versDemande)=>{
+    const sts=STS[x.format]||[]; const i=sts.indexOf(x.statut);
+    const prec=i>0?sts[i-1]:'', suiv=i>=0&&i<sts.length-1?sts[i+1]:'';
+    const q=quiDe(x.statut);
+    let bas;
+    if(!URL_DEP){
+      bas=`<div class="petit">Bientôt : avancer la carte d'ici.</div>`;
+    }else if(!qui){
+      bas=`<div class="petit" style="margin:4px 0 8px;font-weight:800;color:var(--encre)">Avant de déplacer : qui êtes-vous ?</div><div class="qui-btn">${['Lara','Carole-Anne','Younes'].map(n=>`<button class="bt" data-qui="${n}" data-vers="${esc(versDemande||'')}">${n}</button>`).join('')}</div>`;
+    }else{
+      bas=`${suiv?`<button class="bt noir" data-vers="${esc(suiv)}">Passer en « ${esc(suiv)} » →</button>`:''}
+        <div class="deux">${prec?`<button class="bt" data-vers="${esc(prec)}">← ${esc(prec)}</button>`:''}</div>
+        <div class="petit">Vous êtes ${esc(qui)} · <a href="#" data-changer-qui>changer</a></div>`;
+    }
+    fiche.innerHTML=`<div class="haut"><span>${esc(x.format)} · ${esc(x.id)}</span><button class="x" data-fermer aria-label="Fermer">×</button></div>
+      <h3>${esc(x.titre)}</h3>
+      <div class="ligne"><span class="pill pc-${couleur(x.statut)}">${esc(x.statut)}</span>${q?`<span style="font-size:13px;font-weight:800;color:var(--gris)">chez ${esc(q)}</span>`:''}${x.date?`<span class="tag" style="font-size:12px;font-weight:800;background:#EFEAE5;border-radius:4px;padding:1px 6px">${x.statut==='Publié'?'publié le':'prévu le'} ${court(x.date)}</span>`:''}</div>
+      ${x.note?`<p class="note">${esc(x.note)}</p>`:''}
+      ${x.lien?`<a class="bt" href="${esc(x.lien)}" target="_blank" rel="noopener">${/docs\.google/.test(x.lien)?'Ouvrir le document':/business\.facebook/.test(x.lien)?'Ouvrir dans Business Suite':/instagram/.test(x.lien)?'Voir sur Instagram':'Ouvrir'} ↗</a>`:''}
+      ${bas}
+      ${(x.historique||[]).length?`<div class="hist">${x.historique.slice().reverse().slice(0,5).map(h=>`${esc(h.statut)} · ${h.le?court(h.le):''}${h.par?' · '+esc(h.par):''}`).join('<br>')}</div>`:''}`;
+    fiche._x=x; voile.classList.add('on');
+  };
+  voile.addEventListener('click',e=>{
+    if(e.target===voile||e.target.closest('[data-fermer]')){ fermer(); return; }
+    if(e.target.closest('[data-changer-qui]')){ e.preventDefault(); qui=''; try{localStorage.removeItem('suivi-qui');}catch(_){} ouvrirFiche(fiche._x); return; }
+    const bq=e.target.closest('[data-qui]');
+    if(bq){ qui=bq.dataset.qui; try{localStorage.setItem('suivi-qui',qui);}catch(_){} if(bq.dataset.vers) deplacer(fiche._x,bq.dataset.vers); else ouvrirFiche(fiche._x); return; }
+    const bv=e.target.closest('button[data-vers]');
+    if(bv) deplacer(fiche._x,bv.dataset.vers);
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') fermer(); });
+
+  /* Clics dans la page */
   app.addEventListener('click',e=>{
     const b=e.target.closest('button[data-cal]');
     if(b){ const id=b.dataset.cal, d=+b.dataset.d; const cur=mois[id]||AUJ.slice(0,7);
       if(d===0) mois[id]=AUJ.slice(0,7); else { const x=D(cur+'-15'); x.setUTCMonth(x.getUTCMonth()+d); mois[id]=x.toISOString().slice(0,7); }
       rendre(); return; }
+    const k=e.target.closest('[data-id]');
+    if(k && parId[k.dataset.id]){ ouvrirFiche(parId[k.dataset.id]); return; }
     const c=e.target.closest('.case');
-    if(e.target.closest('a')) return;
     if(c){
       const grille=c.parentElement, id=grille.dataset.grille;
       grille.querySelectorAll('.case.sel').forEach(x=>x.classList.remove('sel')); c.classList.add('sel');
-      const liste=(id==='reels'?reels:carr).filter(x=>x.date===c.dataset.j);
-      const det=app.querySelector(`[data-detail="${id}"]`); det.classList.add('on'); det.innerHTML=`<div class="d">${fmt(c.dataset.j,{weekday:'long',day:'numeric',month:'long'})}</div>`+
-        (liste.length?liste.map(x=>x.lien?`<a href="${esc(x.lien)}" target="_blank" rel="noopener">${esc(x.titre)} · <span style="color:var(--gris)">${esc(x.statut)}</span> ↗</a>`:`<div class="it">${esc(x.titre)} · ${esc(x.statut)}</div>`).join(''):'<div class="it" style="color:var(--gris)">Rien de prévu ce jour-là.</div>');
+      const liste=C.filter(x=>x.format===(id==='reels'?'Réel':'Carrousel')&&x.date===c.dataset.j);
+      const det=app.querySelector(`[data-detail="${id}"]`); det.classList.add('on');
+      det.innerHTML=`<div class="d">${fmt(c.dataset.j,{weekday:'long',day:'numeric',month:'long'})}</div>`+
+        (liste.length?liste.map(x=>`<a href="#" data-id="${esc(x.id)}" onclick="return false">${esc(x.titre)} · <span style="color:var(--gris)">${esc(x.statut)}</span> ›</a>`).join(''):'<div class="it" style="color:var(--gris)">Rien de prévu ce jour-là.</div>');
     }
   });
+
+  /* Glisser une carte vers une autre colonne (ordinateur) */
+  app.addEventListener('dragstart',e=>{ const k=e.target.closest('.carte'); if(k){ e.dataTransfer.setData('text/plain',k.dataset.id); e.dataTransfer.effectAllowed='move'; } });
+  app.addEventListener('dragover',e=>{ const col=e.target.closest('.col'); if(col){ e.preventDefault(); app.querySelectorAll('.col.drop').forEach(c=>c!==col&&c.classList.remove('drop')); col.classList.add('drop'); } });
+  app.addEventListener('dragleave',e=>{ const col=e.target.closest('.col'); if(col&&!col.contains(e.relatedTarget)) col.classList.remove('drop'); });
+  app.addEventListener('drop',e=>{ const col=e.target.closest('.col'); if(!col) return; e.preventDefault(); col.classList.remove('drop');
+    const x=parId[e.dataTransfer.getData('text/plain')]; if(x && x.format===col.dataset.fmt) deplacer(x,col.dataset.st); });
+
   window.addEventListener('hashchange',rendre);
-  rendre();
+  tout();
 })();
 </script>
 </body>
