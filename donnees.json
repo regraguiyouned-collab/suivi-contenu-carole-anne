@@ -1,6 +1,6 @@
 {
  "_lisez_moi": "Seul fichier de données de la page. La page calcule le reste. Chaque contenu garde son id pour toujours ; on ne supprime pas, on passe 'retire': true. 'sources' dit d'où vient chaque contenu (doc Google + numéro dans le doc). Le suivi automatique est dans le dossier 'suivi' (local, pas sur GitHub).",
- "derniere_mise_a_jour": "2026-11-18T21:30",
+ "derniere_mise_a_jour": "2026-11-19T17:17",
  "donnees_exemple": false,
  "liens_rapides": [
   {
@@ -81,11 +81,16 @@
    "id": "C-002",
    "format": "Carrousel",
    "titre": "Les 5 questions",
-   "statut": "Programmé",
+   "statut": "Publié",
    "date": "2026-11-19",
    "lien": "https://business.facebook.com/latest/content_calendar?asset_id=104528551402981&business_id=1713534186632630",
-   "note": "Programmé sur Business Suite, 12 h",
-   "historique": [],
+   "note": "Publié le 19 nov. à 12 h (Business Suite)",
+   "historique": [
+    {
+     "statut": "Publié",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": null,
     "numero_dans_doc": null,
@@ -149,11 +154,16 @@
    "id": "C-006",
    "format": "Carrousel",
    "titre": "Si tu as entre 35 et 50 ans, lis ça",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 1, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 1, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 1,
@@ -165,11 +175,16 @@
    "id": "C-007",
    "format": "Carrousel",
    "titre": "Gérer plus de 150 Airbnb sans les acheter : sa méthode exacte",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 2, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 2, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 2,
@@ -181,11 +196,16 @@
    "id": "C-008",
    "format": "Carrousel",
    "titre": "Bon salaire, mais pas le temps de vivre",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 3, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 3, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 3,
@@ -197,11 +217,16 @@
    "id": "C-009",
    "format": "Carrousel",
    "titre": "Le ménage d'un Airbnb, ce n'est pas un ménage classique",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 4, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 4, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 4,
@@ -213,11 +238,16 @@
    "id": "C-010",
    "format": "Carrousel",
    "titre": "Ton job te vide mais tu ne peux pas partir ? Fais ça",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 5, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 5, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 5,
@@ -229,11 +259,16 @@
    "id": "C-011",
    "format": "Carrousel",
    "titre": "C'est quoi, être co-hôte Airbnb ?",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 6, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 6, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 6,
@@ -245,11 +280,16 @@
    "id": "C-012",
    "format": "Carrousel",
    "titre": "Tout le monde est remplaçable au travail",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 7, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 7, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 7,
@@ -261,11 +301,16 @@
    "id": "C-013",
    "format": "Carrousel",
    "titre": "10 business « ennuyeux » qui marchent toujours",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 8, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 8, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 8,
@@ -277,11 +322,16 @@
    "id": "C-014",
    "format": "Carrousel",
    "titre": "Ce qu'on imaginait vs la vraie vie",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 9, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 9, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 9,
@@ -293,11 +343,16 @@
    "id": "C-015",
    "format": "Carrousel",
    "titre": "Ce qu'on fait pour éviter les plaintes des voyageurs",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 10, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 10, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 10,
@@ -309,11 +364,16 @@
    "id": "C-016",
    "format": "Carrousel",
    "titre": "Le vrai prix d'un job confortable",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 11, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 11, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 11,
@@ -325,11 +385,16 @@
    "id": "C-017",
    "format": "Carrousel",
    "titre": "Les mamans vont toutes repenser leur carrière",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 12, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 12, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 12,
@@ -341,11 +406,16 @@
    "id": "C-018",
    "format": "Carrousel",
    "titre": "5 métiers où le client revient toujours",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 13, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 13, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 13,
@@ -357,11 +427,16 @@
    "id": "C-019",
    "format": "Carrousel",
    "titre": "Le burn-out n'est pas une faiblesse",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 14, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 14, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 14,
@@ -373,11 +448,16 @@
    "id": "C-020",
    "format": "Carrousel",
    "titre": "Notre checklist de ménage, pièce par pièce",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 15, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 15, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 15,
@@ -389,11 +469,16 @@
    "id": "C-021",
    "format": "Carrousel",
    "titre": "Elle a gardé son salaire pour financer sa sortie",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 16, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 16, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 16,
@@ -405,11 +490,16 @@
    "id": "C-022",
    "format": "Carrousel",
    "titre": "Les 7 étapes du salariat",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 17, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 17, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 17,
@@ -421,11 +511,16 @@
    "id": "C-023",
    "format": "Carrousel",
    "titre": "Comment bien lancer une nouvelle annonce",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 18, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 18, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 18,
@@ -437,11 +532,16 @@
    "id": "C-024",
    "format": "Carrousel",
    "titre": "La crise de milieu de carrière des mamans qui travaillent",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 19, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 19, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 19,
@@ -453,11 +553,16 @@
    "id": "C-025",
    "format": "Carrousel",
    "titre": "Tu as craqué au travail, mais tu ne peux pas partir tout de suite",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 20, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 20, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 20,
@@ -469,11 +574,16 @@
    "id": "C-026",
    "format": "Carrousel",
    "titre": "Les 7 choses à avoir dans chaque salle de bain",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Idée n° 21, envoyée le 18 nov.",
-   "historique": [],
+   "note": "Idée n° 21, envoyée le 18 nov. · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 21,
@@ -485,11 +595,16 @@
    "id": "C-027",
    "format": "Carrousel",
    "titre": "Le pire avis qu'on a reçu, et ce qu'on a fait",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Il faut l'histoire du pire avis (Carole-Anne)",
-   "historique": [],
+   "note": "Il faut l'histoire du pire avis (Carole-Anne) · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 22,
@@ -501,11 +616,16 @@
    "id": "C-028",
    "format": "Carrousel",
    "titre": "Ce logement rapportait X par mois, aujourd'hui il fait Y",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Il faut les vrais chiffres d'un logement (Carole-Anne)",
-   "historique": [],
+   "note": "Il faut les vrais chiffres d'un logement (Carole-Anne) · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 23,
@@ -517,11 +637,16 @@
    "id": "C-029",
    "format": "Carrousel",
    "titre": "J'ai quitté le métier de mes rêves : mon histoire",
-   "statut": "Idée à valider",
+   "statut": "À créer",
    "date": null,
    "lien": "https://docs.google.com/document/d/1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8/edit",
-   "note": "Il faut son parcours en quelques phrases (Carole-Anne)",
-   "historique": [],
+   "note": "Il faut son parcours en quelques phrases (Carole-Anne) · validée par Lara sur WhatsApp le 19 nov. (« c'est ok pr les caroussels »)",
+   "historique": [
+    {
+     "statut": "À créer",
+     "le": "2026-11-19"
+    }
+   ],
    "sources": {
     "doc": "1zm1jgoOck55N9FRmcLUlIEoq_7-VgsCk6H-rnhq56d8",
     "numero_dans_doc": 24,
@@ -927,9 +1052,9 @@
    "id": "T-004",
    "tache": "Freebie : mettre le lien au nom de « Carole-Anne conciergerie »",
    "deadline": null,
-   "fait": false,
-   "fait_le": null,
-   "lien": "https://regraguiyouned-collab.github.io/plan-4-etapes/"
+   "fait": true,
+   "fait_le": "2026-11-18",
+   "lien": "https://plan.caroleanneconciergerie.fr"
   },
   {
    "id": "T-005",
@@ -943,6 +1068,13 @@
    "id": "T-006",
    "tache": "Script de la vidéo YouTube",
    "deadline": "2026-11-08",
+   "fait": false,
+   "fait_le": null
+  },
+  {
+   "id": "T-007",
+   "tache": "Envoyer à Lara les 10 premiers carrousels (design + copy)",
+   "deadline": "2026-11-22",
    "fait": false,
    "fait_le": null
   }
