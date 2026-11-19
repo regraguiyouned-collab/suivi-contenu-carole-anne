@@ -1,6 +1,6 @@
 {
  "_lisez_moi": "Seul fichier de données de la page. La page calcule le reste. Chaque contenu garde son id pour toujours ; on ne supprime pas, on passe 'retire': true. 'sources' dit d'où vient chaque contenu (doc Google + numéro dans le doc). Le suivi automatique est dans le dossier 'suivi' (local, pas sur GitHub).",
- "derniere_mise_a_jour": "2026-11-19T17:17",
+ "derniere_mise_a_jour": "2026-11-19T20:31",
  "donnees_exemple": false,
  "liens_rapides": [
   {
